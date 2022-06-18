@@ -1,0 +1,8 @@
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0px auto;
+  max-width: 1440px;
+}
