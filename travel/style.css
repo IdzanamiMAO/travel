@@ -75,7 +75,7 @@ h2 {
   border: none;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 2px 3px rgba(13, 96, 111, 0.16);
   border-radius: 10px;
-  font-family: 'Red Hat Text';
+  font-family: 'Red Hat Text', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -88,9 +88,10 @@ h2 {
 .inner{
   display: flex;
   flex-direction: column;
+  overflow: hidden; /*скрывает "лишнее" в слайдере*/
 }
 .title{
-  font-family: 'Aleo';
+  font-family: 'Aleo', serif;
   font-style: normal;
   font-weight: 700;
   font-size: 80px;
@@ -99,12 +100,11 @@ h2 {
 }
 .subtitle{
   padding: 46px 0px;
-  font-family: 'Aleo';
+  font-family: 'Aleo', serif;
   font-style: italic;
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
-  /* identical to box height */
   color: #FFFFFF;
 }
 .form{
@@ -115,7 +115,7 @@ h2 {
 }
 .search-field{
   padding: 32px 41px;
-  font-family: 'Aleo';
+  font-family: 'Aleo', serif;
   font-style: italic;
   font-weight: 400;
   font-size: 24px;
@@ -136,12 +136,11 @@ h2 {
   box-shadow: 0px 0px 3px rgba(13, 96, 111, 0.08), 0px 2px 3px rgba(13, 96, 111, 0.16);
   border-radius: 10px;
   border: none;
-  /*font-family: 'Red Hat Text';*/
+  font-family: 'Red Hat Text', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
   line-height: 32px;
-  /* identical to box height */
   color: #FFFFFF;
 }
 
@@ -151,13 +150,12 @@ h2 {
 }
 .caption{
   margin-bottom: 40px;
-  font-family: 'Red Hat Text';
+  font-family: 'Red Hat Text', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 40px;
   line-height: 53px;
   text-align: center;
-  /* identical to box height */
   color: #F2785C;
 }
 .step__list{
@@ -189,13 +187,71 @@ h2 {
   background-image: url(./assets/svg/recomendation.svg);
 }
 .desc{
-  font-family: 'Aleo';
+  font-family: 'Aleo', serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
-  line-height: 24px;
-  /* identical to box height */
-  color: #0D606F;
   text-align: center;
+  line-height: 24px;
+  color: #0D606F;
+  
 }
+
+.destination{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 80px;
+}
+.slider__wrapper{ /*обертка для всего слайдера*/
+  display: flex;
+  justify-content: center;
+}
+.slider__list{ /*обертка для картинок*/
+  display: flex;
+  justify-content: space-between;
+}
+.slider__item{ /*картинки с подписями*/
+  position: relative;
+  margin-left: 60px;
+}
+.country-img{
+  max-width: 800px;
+  border-radius: 10px;
+}
+.country-name{
+  position: absolute;
+  left: 15px;
+  bottom: 40px;
+  font-family: 'Red Hat Text', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 42px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+.slider__controls{ /*кнопки слайдера*/
+  margin: 25px auto 0px;
+/*тут будет стилизация кнопок управления слайдера*/
+}
+.more{
+  margin: 40px auto;
+  padding: 14px 31px 14px 81px;
+  background: #0D606F;
+  box-shadow: 0px 2px 3px rgba(13, 96, 111, 0.16);
+  border-radius: 10px;
+  border: none;
+  font-family: 'Red Hat Text', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+  color: #FFFFFF;
+  background-image: url(./assets/svg/arrow.svg);
+  background-position: 32px;
+  background-size: 40px;
+  background-repeat: no-repeat;
+}
+
 
