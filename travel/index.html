@@ -5,10 +5,49 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Travel</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./assets/ico/favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,400;0,700;1,400;1,700&family=Magra:wght@700&family=Red+Hat+Display:wght@500&display=swap" rel="stylesheet">
+
   </head>
   <body>
-    <header>
-    </header>
+    <div class="wrap">
+      <header class="header">
+        <div class="logo">
+          <p class="logo-headline">Travel Portal</p>
+        </div>
+        <nav>
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a class="nav__link" href="">How It Works</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="">Plan Your Trip</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="">Destinations</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="">Travel Stories</a>
+            </li>
+          </ul>
+        </nav>
+        <button class="login">Login</button>
+      </header>
+      <div class="content">
+        <div class="inner">
+          <h1 class="title">Explore the beauty of the World</h1>
+          <p class="subtitle">Receive personalized recommendations for countries, hotels, activities and more</p>
+          <form class="form" action="/search" method="post">
+            <input class="search-field" type="search" name="do-search" id="do-search" placeholder="What would you like to do?">
+            <input class="button-search" type="submit" name="submit" value="Start Planning">
+          </form>
+        </div>
+      </div>
+    </div>
+    
     <main>
     </main>
     <footer>
