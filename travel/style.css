@@ -215,6 +215,9 @@ h2 {
   position: relative;
   margin-left: 60px;
 }
+.slider__item:first-child{
+  margin-left: 0px;
+}
 .country-img{
   max-width: 800px;
   border-radius: 10px;
@@ -254,4 +257,63 @@ h2 {
   background-repeat: no-repeat;
 }
 
+.stories{
+  /*position: relative;
+  /*position: absolute;
+  top: 40px;
+  background-image: url(./assets/img/baskground_stories.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;*/
+}
+.stories__wraper{ /*обертка для всех стори*/
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 80px;
+  padding: 0px 120px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.stories__list{/*обертка для конкретной стори*/
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
+}
+.stories__list:first-child{
+  padding-top: 40px;
+}
 
+.stories__img{
+  filter: drop-shadow(0px 4px 4px #0D606F);
+  max-width: 400px;
+  border-radius: 16px;
+}
+.stories__item{
+  padding-left: 40px;
+  padding-right: 10px;
+}
+.stories__caption{
+  padding-bottom: 24px;
+  font-family: 'Aleo';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 42px;
+  color: #0D606F;
+}
+.stories__desc{
+  font-family: 'Aleo';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #0D606F;
+}
+.stories__link{
+  font-family: 'Aleo';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  text-decoration-line: underline;
+  color: #0D606F;
+}
