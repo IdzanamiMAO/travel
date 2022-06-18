@@ -15,7 +15,8 @@ a {
 }
 p,
 ul,
-h1 {
+h1,
+h2 {
   margin: 0px;
 }
 
@@ -143,3 +144,58 @@ h1 {
   /* identical to box height */
   color: #FFFFFF;
 }
+
+.step__card{
+  margin-bottom: 80px;
+  padding: 0px 120px;
+}
+.caption{
+  margin-bottom: 40px;
+  font-family: 'Red Hat Text';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 53px;
+  text-align: center;
+  /* identical to box height */
+  color: #F2785C;
+}
+.step__list{
+  padding-bottom: 17px;
+  display: flex;
+  justify-content: space-between;
+}
+.step__item{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.step__ico{
+  margin: 0 auto 30px;
+  padding: 50px;
+  background: #F2785C;
+  border-radius: 10px;
+  background-position: center;
+  background-size: 50px;
+  background-repeat: no-repeat;
+}
+.step-1{
+  background-image: url(./assets/svg/ToDo.svg);
+}
+.step-2{
+  background-image: url(./assets/svg/dates.svg);
+}
+.step-3{
+  background-image: url(./assets/svg/recomendation.svg);
+}
+.desc{
+  font-family: 'Aleo';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  /* identical to box height */
+  color: #0D606F;
+  text-align: center;
+}
+
