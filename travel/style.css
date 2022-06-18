@@ -5,7 +5,6 @@ html {
 body {
   margin: 0px auto;
   max-width: 1440px;
-  border: 1px solid red;
 }
 li {
   list-style: none;
@@ -258,18 +257,20 @@ h2 {
 }
 
 .stories{
-  /*position: relative;
-  /*position: absolute;
-  top: 40px;
+  /*position: relative;*/
+}
+.stories__wraper{ /*внешняя обертка для всех стори*/
   background-image: url(./assets/img/baskground_stories.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top;*/
+  /*position: absolute;
+  top: 40px;*/
 }
-.stories__wraper{ /*обертка для всех стори*/
+
+.stories__inner{ /*внутренняя обертка для всех стори*/
   display: flex;
   flex-direction: column;
-  margin-bottom: 80px;
+  padding-bottom: 80px;
   padding: 0px 120px;
   background-color: rgba(255, 255, 255, 0.7);
 }
@@ -316,4 +317,50 @@ h2 {
   line-height: 24px;
   text-decoration-line: underline;
   color: #0D606F;
+}
+
+.footer{
+  background-image: url(./assets/img/baskground_stories.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+.footer__wraper{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0px 120px;
+}
+.copyright{
+  font-family: 'Red Hat Text';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  color: #FFFFFF;
+}
+.social{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 328px;
+}
+.social__link{
+  margin-left: 20px;
+  padding: 30px 0px;
+  background-position: center;
+  width: 34px;
+  background-size: 34px;
+  background-repeat: no-repeat;
+}
+.social__link:first-child{
+  margin-left: 0px;
+}
+.instagram{
+  background-image: url(./assets/ico/instagram.png);
+}
+.youtube{
+  background-image: url(./assets/ico/youtube.png);
+}
+.twitter{
+  background-image: url(./assets/ico/twitter.png);
 }
