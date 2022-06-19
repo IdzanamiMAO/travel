@@ -28,7 +28,7 @@ h3 {
   background-size: cover;
   background-repeat: no-repeat;
 }
-.header{ /*пропиши для хэдэра position fixed, перенеси фоновое изображение в секцию preview, саму секцию перенеси в main. хэдр должен наложиться на фоновое изображение и не нужна будет обертка для этих двух блокой с фоновым ихображением*/
+.header{
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -71,6 +71,13 @@ h3 {
   line-height: 21px;
   color: #FFFFFF;
 }
+.nav__link:hover,
+.nav__link:active,
+.nav__link:focus {
+  cursor: pointer;
+  color:  #083942;
+  transition: .3s;
+}
 .login{
   margin-left: 30px;
   padding: 10px 30px;
@@ -85,7 +92,19 @@ h3 {
   line-height: 21px;
   color: #FFFFFF;
 }
-
+.login:hover,
+.login:focus,
+.login:active,
+.search-form__submit:hover,
+.search-form__submit:focus,
+.search-form__submit:active,
+.more:hover,
+.more:focus,
+.more:active {
+  cursor: pointer;
+  background-color: #083942;
+  transition: .3s;
+}
 
 .preview{
   padding: 32px 428px 225px 120px;
@@ -161,10 +180,6 @@ h3 {
   border-radius: 10px;
   border: 0px;
 }
-.search-form__submit:hover, .search-form__submit:focus, .search-form__submit:active {
-  background:  #0a4954;
-  cursor: pointer;
-}
 
 
 .steps{
@@ -191,6 +206,22 @@ h3 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.step__item:hover,
+.step__item:active,
+.step__item:focus,
+.slider__item:hover,
+.slider__item:active,
+.slider__item:focus,
+.stories__list:hover,
+.stories__list:active,
+.stories__list:focus,
+.social__link:hover,
+.social__link:active,
+.social__link:focus {
+  cursor: pointer;
+  filter: drop-shadow(0 0 5px #083942);
+  transition: .3s;
 }
 .step__ico{
   margin: 0 auto 30px;
@@ -376,7 +407,7 @@ h3 {
 }
 
 
-.footer{ /*пропиши для футера position fixed (снизу), перенеси фоновое изображение в секцию stories задай смещение на 40пх вниз и высоту 100%, белый полупрозрачный фон сделай во вложенной обертке stories__wraper. по идее футер должен наложиться на фоновое изображение и не нужно будет дополнительно добавлять фоновое изображение футеру и стыковать их*/
+.footer{
   background-image: url(./assets/img/baskground_stories.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -409,3 +440,10 @@ h3 {
 .social__item:first-child{
   margin-left: 0px;
 }
+/*.social__link:hover,
+.social__link:active,
+.social__link:focus {
+  cursor: pointer;
+  filter: drop-shadow(0 0 5px #083942);
+  transition: .3s;
+}*/
