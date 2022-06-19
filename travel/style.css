@@ -28,7 +28,7 @@ h3 {
   background-size: cover;
   background-repeat: no-repeat;
 }
-.header{
+.header{ /*пропиши для хэдэра position fixed, перенеси фоновое изображение в секцию preview, саму секцию перенеси в main. хэдр должен наложиться на фоновое изображение и не нужна будет обертка для этих двух блокой с фоновым ихображением*/
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -109,42 +109,58 @@ h3 {
   line-height: 24px;
   color: #FFFFFF;
 }
-.form{
-  display: flex;
-  justify-content: space-between;
-  background: rgba(255, 255, 255, 0.7);
-  border-radius: 16px;
-  margin-bottom: 30px;
+.search-form{
+  padding-bottom: 30px;
 }
-.search-field{
-  padding: 33px 41px;
-  font-family: 'Aleo', serif;
+.search-form__wrap{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.search-form__info{
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 0px;
+  border-radius: 16px;
+  padding: 18px;
+}
+.search-form__field{
+  background-color: transparent;
+  border: none;
+  font-family: 'Aleo';
   font-style: italic;
   font-weight: 400;
   font-size: 24px;
   line-height: 29px;
   color: #F2785C;
-  background: rgba(0, 0, 0, 0);
+  width: 500px;
+  padding-left: 23px;
+}
+.search-form__field::placeholder{
+  font-family: 'Aleo';
+  font-style: italic;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  color: #F2785C;
   border: none;
 }
-.search-field::-webkit-input-placeholder {color:#F2785C;}
-.search-field::-moz-placeholder          {color:#F2785C;}/* Firefox 19+ */
-.search-field:-moz-placeholder           {color:#F2785C;}/* Firefox 18- */
-.search-field:-ms-input-placeholder      {color:#F2785C;}
 
-.button-search{
-  margin: 18px 18px 18px 45px;
-  padding: 10px 32px;
-  background: #0D606F;
-  box-shadow: 0px 0px 3px rgba(13, 96, 111, 0.08), 0px 2px 3px rgba(13, 96, 111, 0.16);
-  border-radius: 10px;
-  border: none;
+.search-form__submit{
+  padding: 14px 33px;
   font-family: 'Red Hat Text', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
   line-height: 32px;
   color: #FFFFFF;
+  background: #0D606F;
+  box-shadow: 0px 0px 3px rgba(13, 96, 111, 0.08), 0px 2px 3px rgba(13, 96, 111, 0.16);
+  border-radius: 10px;
+  border: 0px;
+}
+.search-form__submit:hover, .search-form__submit:focus, .search-form__submit:active {
+  background:  #0a4954;
+  cursor: pointer;
 }
 
 .steps{
@@ -260,9 +276,8 @@ h3 {
   background-repeat: no-repeat;
 }
 
-.stories{
-  /*position: relative;*/
-}
+
+
 .stories__wraper{ /*внешняя обертка для всех стори*/
   background-image: url(./assets/img/baskground_stories.jpg);
   background-size: cover;
@@ -324,7 +339,7 @@ h3 {
 }
 
 
-.footer{
+.footer{ /*пропиши для футера position fixed (снизу), перенеси фоновое изображение в секцию stories задай смещение на 40пх вниз и высоту 100%, белый полупрозрачный фон сделай во вложенной обертке stories__wraper. по идее футер должен наложиться на фоновое изображение и не нужно будет дополнительно добавлять фоновое изображение футеру и стыковать их*/
   background-image: url(./assets/img/baskground_stories.jpg);
   background-size: cover;
   background-repeat: no-repeat;

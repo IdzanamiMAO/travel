@@ -40,10 +40,13 @@
         <div class="inner">
           <h1 class="title">Explore the beauty of the World</h1>
           <p class="subtitle">Receive personalized recommendations for countries, hotels, activities and more</p>
-          <form class="form" action="/search" method="post">
-            <input class="search-field" type="search" name="do-search" id="do-search" placeholder="What would you like to do?">
-            <input class="button-search" type="submit" name="submit" value="Start Planning">
-            <button></button>
+          <form class="search-form">
+            <fieldset class="search-form__info">
+              <p class="search-form__wrap">
+                <input class="search-form__field" type="text" placeholder="What would you like to do?">
+                <button class="search-form__submit" type="submit">Start Planning</button>
+              </p>
+            </fieldset>
           </form>
         </div>
       </section>
