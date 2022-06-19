@@ -15,7 +15,8 @@ a {
 p,
 ul,
 h1,
-h2 {
+h2,
+h3 {
   margin: 0px;
 }
 
@@ -30,6 +31,7 @@ h2 {
 .header{
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 25px 120px;
   background-color: rgba(242, 120, 92, 0.7);
   box-shadow: 0 0 10px #0D606F;
@@ -48,6 +50,7 @@ h2 {
   line-height: 39px;
   color: #FFFFFF;
 }
+
 .nav__list{
   display: flex;
   justify-content: space-between;
@@ -68,7 +71,15 @@ h2 {
   line-height: 21px;
   color: #FFFFFF;
 }
+.nav__link:hover,
+.nav__link:active,
+.nav__link:focus {
+  cursor: pointer;
+  color:  #083942;
+  transition: .3s;
+}
 .login{
+  margin-left: 30px;
   padding: 10px 30px;
   background: #0D606F;
   border: none;
@@ -81,13 +92,26 @@ h2 {
   line-height: 21px;
   color: #FFFFFF;
 }
-.content{
-  padding: 32px 428px 221px 120px;
+.login:hover,
+.login:focus,
+.login:active,
+.search-form__submit:hover,
+.search-form__submit:focus,
+.search-form__submit:active,
+.more:hover,
+.more:focus,
+.more:active {
+  cursor: pointer;
+  background-color: #083942;
+  transition: .3s;
+}
+
+.preview{
+  padding: 32px 428px 225px 120px;
 }
 .inner{
   display: flex;
   flex-direction: column;
-  overflow: hidden; /*скрывает "лишнее" в слайдере*/
 }
 .title{
   font-family: 'Aleo', serif;
@@ -98,7 +122,7 @@ h2 {
   color: #FFFFFF;
 }
 .subtitle{
-  padding: 46px 0px;
+  padding: 30px 0px 46px;
   font-family: 'Aleo', serif;
   font-style: italic;
   font-weight: 700;
@@ -106,44 +130,59 @@ h2 {
   line-height: 24px;
   color: #FFFFFF;
 }
-.form{
-  display: flex;
-  justify-content: space-between;
-  background: rgba(255, 255, 255, 0.7);
-  border-radius: 16px;
+.search-form{
+  padding-bottom: 30px;
 }
-.search-field{
-  padding: 32px 41px;
+.search-form__wrap{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.search-form__info{
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 0px;
+  border-radius: 16px;
+  padding: 18px;
+}
+.search-form__field{
+  background-color: transparent;
+  border: none;
+  outline: 0px; /*убирает рамку плейсхолдера*/
   font-family: 'Aleo', serif;
   font-style: italic;
   font-weight: 400;
   font-size: 24px;
   line-height: 29px;
   color: #F2785C;
-  background: rgba(0, 0, 0, 0);
+  width: 500px;
+  padding-left: 23px;
+  outline: 0px;
+}
+.search-form__field::placeholder{
+  font-family: 'Aleo', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  color: #F2785C;
   border: none;
 }
-.search-field::-webkit-input-placeholder {color:#F2785C;}
-.search-field::-moz-placeholder          {color:#F2785C;}/* Firefox 19+ */
-.search-field:-moz-placeholder           {color:#F2785C;}/* Firefox 18- */
-.search-field:-ms-input-placeholder      {color:#F2785C;}
-
-.button-search{
-  margin: 18px 18px 18px 45px;
-  padding: 10px 32px;
-  background: #0D606F;
-  box-shadow: 0px 0px 3px rgba(13, 96, 111, 0.08), 0px 2px 3px rgba(13, 96, 111, 0.16);
-  border-radius: 10px;
-  border: none;
+.search-form__submit{
+  padding: 14px 33px;
   font-family: 'Red Hat Text', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
   line-height: 32px;
   color: #FFFFFF;
+  background: #0D606F;
+  box-shadow: 0px 0px 3px rgba(13, 96, 111, 0.08), 0px 2px 3px rgba(13, 96, 111, 0.16);
+  border-radius: 10px;
+  border: 0px;
 }
 
-.step__card{
+
+.steps{
   margin-bottom: 80px;
   padding: 0px 120px;
 }
@@ -156,9 +195,10 @@ h2 {
   line-height: 53px;
   text-align: center;
   color: #F2785C;
+  text-transform: uppercase;
 }
 .step__list{
-  padding-bottom: 17px;
+  padding: 0px 10px 20px;
   display: flex;
   justify-content: space-between;
 }
@@ -167,11 +207,27 @@ h2 {
   flex-direction: column;
   justify-content: center;
 }
+.step__item:hover,
+.step__item:active,
+.step__item:focus,
+.slider__item:hover,
+.slider__item:active,
+.slider__item:focus,
+.stories__list:hover,
+.stories__list:active,
+.stories__list:focus,
+.social__link:hover,
+.social__link:active,
+.social__link:focus {
+  cursor: pointer;
+  filter: drop-shadow(0 0 5px #083942);
+  transition: .3s;
+}
 .step__ico{
   margin: 0 auto 30px;
   padding: 50px;
   background: #F2785C;
-  border-radius: 10px;
+  border-radius: 16px;
   background-position: center;
   background-size: 50px;
   background-repeat: no-repeat;
@@ -193,22 +249,26 @@ h2 {
   text-align: center;
   line-height: 24px;
   color: #0D606F;
-  
 }
 
-.destination{
+
+.destinations{
   display: flex;
   justify-content: center;
   flex-direction: column;
   margin-bottom: 80px;
 }
 .slider__wrapper{ /*обертка для всего слайдера*/
-  display: flex;
-  justify-content: center;
+  /*display: flex;
+  justify-content: center;*/
+  width: 1440px;
+  overflow: hidden; /*скрывает "лишнее" в слайдере*/
 }
 .slider__list{ /*обертка для картинок*/
   display: flex;
   justify-content: space-between;
+  position: relative;
+  left: -540px;
 }
 .slider__item{ /*картинки с подписями*/
   position: relative;
@@ -219,7 +279,7 @@ h2 {
 }
 .country-img{
   max-width: 800px;
-  border-radius: 10px;
+  border-radius: 16px;
 }
 .country-name{
   position: absolute;
@@ -234,12 +294,45 @@ h2 {
   color: #FFFFFF;
 }
 .slider__controls{ /*кнопки слайдера*/
-  margin: 25px auto 0px;
-/*тут будет стилизация кнопок управления слайдера*/
+  margin: 15px auto 0px;
 }
+.button-left,
+.button-right{
+  background-color: rgba(242, 120, 92, 0.5);
+  border-radius: 50px;
+  padding: 10px;
+  border: none;
+}
+.button-center{
+  background-color: #F2785C;
+  border-radius: 50px;
+  padding: 10px;
+  border: none;
+  margin: 0px 10px;
+}
+
+/*анимация карусели*/
+/*@keyframes move-left{
+  from {left: -540px;}
+  to {left: 0px;}
+}
+.transition-left{
+  animation-name: move-left;
+  animation-duration: 5s;
+}
+
+@keyframes move-right{
+  from {left: -540px;}
+  to {left: -1080px;}
+}
+.transition-right{
+  animation-name: move-right;
+  animation-duration: 5s;
+}*/
+
 .more{
-  margin: 40px auto;
-  padding: 14px 31px 14px 81px;
+  margin: 40px auto 0px;
+  padding: 14px 36px 14px 85px;
   background: #0D606F;
   box-shadow: 0px 2px 3px rgba(13, 96, 111, 0.16);
   border-radius: 10px;
@@ -256,22 +349,17 @@ h2 {
   background-repeat: no-repeat;
 }
 
-.stories{
-  /*position: relative;*/
-}
+
 .stories__wraper{ /*внешняя обертка для всех стори*/
   background-image: url(./assets/img/baskground_stories.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  /*position: absolute;
-  top: 40px;*/
 }
-
 .stories__inner{ /*внутренняя обертка для всех стори*/
   display: flex;
   flex-direction: column;
   padding-bottom: 80px;
-  padding: 0px 120px;
+  padding: 0px 120px 40px;
   background-color: rgba(255, 255, 255, 0.7);
 }
 .stories__list{/*обертка для конкретной стори*/
@@ -282,7 +370,6 @@ h2 {
 .stories__list:first-child{
   padding-top: 40px;
 }
-
 .stories__img{
   filter: drop-shadow(0px 4px 4px #0D606F);
   max-width: 400px;
@@ -294,7 +381,7 @@ h2 {
 }
 .stories__caption{
   padding-bottom: 24px;
-  font-family: 'Aleo';
+  font-family: 'Aleo', serif;
   font-style: normal;
   font-weight: 400;
   font-size: 35px;
@@ -302,7 +389,7 @@ h2 {
   color: #0D606F;
 }
 .stories__desc{
-  font-family: 'Aleo';
+  font-family: 'Aleo', serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -310,7 +397,7 @@ h2 {
   color: #0D606F;
 }
 .stories__link{
-  font-family: 'Aleo';
+  font-family: 'Aleo', serif;
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
@@ -318,6 +405,7 @@ h2 {
   text-decoration-line: underline;
   color: #0D606F;
 }
+
 
 .footer{
   background-image: url(./assets/img/baskground_stories.jpg);
@@ -332,7 +420,7 @@ h2 {
   padding: 0px 120px;
 }
 .copyright{
-  font-family: 'Red Hat Text';
+  font-family: 'Red Hat Text', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -344,23 +432,18 @@ h2 {
   justify-content: space-between;
   padding-left: 328px;
 }
-.social__link{
+.social__item{
   margin-left: 20px;
-  padding: 30px 0px;
-  background-position: center;
-  width: 34px;
-  background-size: 34px;
-  background-repeat: no-repeat;
+  padding: 14px 0px 10px;
+  max-width: 34px;
 }
-.social__link:first-child{
+.social__item:first-child{
   margin-left: 0px;
 }
-.instagram{
-  background-image: url(./assets/ico/instagram.png);
-}
-.youtube{
-  background-image: url(./assets/ico/youtube.png);
-}
-.twitter{
-  background-image: url(./assets/ico/twitter.png);
-}
+/*.social__link:hover,
+.social__link:active,
+.social__link:focus {
+  cursor: pointer;
+  filter: drop-shadow(0 0 5px #083942);
+  transition: .3s;
+}*/
