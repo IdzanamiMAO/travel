@@ -2,16 +2,7 @@ html {
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
-body {
-  margin: 0px auto;
-  max-width: 1440px;
-}
-li {
-  list-style: none;
-}
-a {
-  text-decoration: none;
-}
+
 p,
 ul,
 h1,
@@ -20,30 +11,51 @@ h3 {
   margin: 0px;
 }
 
-.wrap{
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 80px;
-  background-image: url(./assets/img/baskground_header.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
+li {
+  list-style: none;
 }
-.header{
+
+a {
+  text-decoration: none;
+}
+
+
+.body-wrap { /*Обертка для фоновых рисунков*/
+  width: 100%;
+  background:
+  url("./assets/img/baskground_header.jpg") top no-repeat, 
+  url("./assets/img/baskground_stories.jpg")bottom no-repeat;
+  background-size: 1440px auto;
+  background-color: #FFFFFF;
+}
+
+.header-wrap { /*Обертка, чтобы цвет фона хэдра тянулся на весь экран*/
+  background-color: rgba(242, 120, 92, 0.7);
+  box-shadow: 0px 4px 4px rgba(13, 96, 111, 0.5);
+}
+
+.content-wrap { /*ограничевает контент по ширине и центрирует его по центру*/
+  max-width: 1440px;
+  margin: 0px auto;
+}
+
+
+.header { /*стили хэлра*/
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 25px 120px;
-  background-color: rgba(242, 120, 92, 0.7);
-  box-shadow: 0 0 10px #0D606F;
 }
-.logo{
-  background-image: url(./assets/svg/logo.svg);
+
+.logo {
+  background-image: url("./assets/svg/logo.svg");
   background-size: 30px;
   background-repeat: no-repeat;
 }
-.logo-headline{
-  padding-left: 36px;
-  font-family: 'Magra', sans-serif;
+
+.logo-headline {
+  padding-left: 38px;
+  font-family: "Magra", sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 32px;
@@ -51,47 +63,54 @@ h3 {
   color: #FFFFFF;
 }
 
-.nav__list{
+.nav__list {
   display: flex;
   justify-content: space-between;
   margin: 0px;
   padding: 0px;
 }
-.nav__item{
+
+.nav__item {
   padding-left: 42px;
 }
-.nav__item:first-child{
+
+.nav__item:first-child {
   padding-left: 0px;
 }
-.nav__link{
-  font-family: 'Red Hat Text', sans-serif;
+
+.nav__link,
+.copyright {
+  font-family: "Red Hat Text", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 21px;
   color: #FFFFFF;
 }
+
 .nav__link:hover,
 .nav__link:active,
 .nav__link:focus {
   cursor: pointer;
-  color:  #083942;
-  transition: .3s;
+  color: #083942;
+  transition: 0.3s;
 }
-.login{
+
+.login {
   margin-left: 30px;
   padding: 10px 30px;
   background: #0D606F;
   border: none;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 2px 3px rgba(13, 96, 111, 0.16);
   border-radius: 10px;
-  font-family: 'Red Hat Text', sans-serif;
+  font-family: "Red Hat Text", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 21px;
   color: #FFFFFF;
 }
+
 .login:hover,
 .login:focus,
 .login:active,
@@ -103,63 +122,71 @@ h3 {
 .more:active {
   cursor: pointer;
   background-color: #083942;
-  transition: .3s;
+  transition: 0.3s;
 }
 
-.preview{
-  padding: 32px 428px 225px 120px;
+
+.preview {
+  margin: 32px 428px 301px 120px;
 }
-.inner{
+
+.inner {
   display: flex;
   flex-direction: column;
 }
-.title{
-  font-family: 'Aleo', serif;
+
+.title {
+  font-family: "Aleo", serif;
   font-style: normal;
   font-weight: 700;
   font-size: 80px;
   line-height: 96px;
   color: #FFFFFF;
 }
-.subtitle{
-  padding: 30px 0px 46px;
-  font-family: 'Aleo', serif;
+
+.subtitle {
+  padding: 33px 0px 45px;
+  font-family: "Aleo", serif;
   font-style: italic;
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
   color: #FFFFFF;
 }
-.search-form{
+
+.search-form {
   padding-bottom: 30px;
 }
-.search-form__wrap{
+
+.search-form__wrap {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.search-form__info{
+
+.search-form__info {
   background-color: rgba(255, 255, 255, 0.7);
   border: 0px;
   border-radius: 16px;
   padding: 18px;
 }
-.search-form__field{
+
+.search-form__field {
+  width: 500px;
+  padding-left: 23px;
   background-color: transparent;
   border: none;
   outline: 0px; /*убирает рамку плейсхолдера*/
-  font-family: 'Aleo', serif;
+  font-family: "Aleo", serif;
   font-style: italic;
   font-weight: 400;
   font-size: 24px;
   line-height: 29px;
   color: #F2785C;
-  width: 500px;
-  padding-left: 23px;
-  outline: 0px;
 }
-.search-form__field::placeholder{
-  font-family: 'Aleo', serif;
+
+.search-form__field::placeholder {
+  font-family: "Aleo", serif;
   font-style: italic;
   font-weight: 400;
   font-size: 24px;
@@ -167,9 +194,10 @@ h3 {
   color: #F2785C;
   border: none;
 }
-.search-form__submit{
+
+.search-form__submit {
   padding: 14px 33px;
-  font-family: 'Red Hat Text', sans-serif;
+  font-family: "Red Hat Text", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
@@ -182,13 +210,14 @@ h3 {
 }
 
 
-.steps{
-  margin-bottom: 80px;
-  padding: 0px 120px;
+.steps {
+  margin-bottom: 100px;
+  padding: 0px 131px;
 }
-.caption{
+
+.caption {
   margin-bottom: 40px;
-  font-family: 'Red Hat Text', sans-serif;
+  font-family: "Red Hat Text", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 40px;
@@ -197,16 +226,22 @@ h3 {
   color: #F2785C;
   text-transform: uppercase;
 }
-.step__list{
-  padding: 0px 10px 20px;
+
+.step__list {
   display: flex;
   justify-content: space-between;
 }
-.step__item{
+
+.step__item {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
+.step__item:first-child {
+  margin-right: 70px;
+}
+
 .step__item:hover,
 .step__item:active,
 .step__item:focus,
@@ -221,9 +256,10 @@ h3 {
 .social__link:focus {
   cursor: pointer;
   filter: drop-shadow(0 0 5px #083942);
-  transition: .3s;
+  transition: 0.3s;
 }
-.step__ico{
+
+.step__ico {
   margin: 0 auto 30px;
   padding: 50px;
   background: #F2785C;
@@ -232,17 +268,21 @@ h3 {
   background-size: 50px;
   background-repeat: no-repeat;
 }
-.step-1{
-  background-image: url(./assets/svg/ToDo.svg);
+
+.step-1 {
+  background-image: url("./assets/svg/ToDo.svg");
 }
-.step-2{
-  background-image: url(./assets/svg/dates.svg);
+
+.step-2 {
+  background-image: url("./assets/svg/dates.svg");
 }
-.step-3{
-  background-image: url(./assets/svg/recomendation.svg);
+
+.step-3 {
+  background-image: url("./assets/svg/recomendation.svg");
 }
-.desc{
-  font-family: 'Aleo', serif;
+
+.desc {
+  font-family: "Aleo", serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -252,40 +292,47 @@ h3 {
 }
 
 
-.destinations{
+.destinations {
   display: flex;
   justify-content: center;
   flex-direction: column;
   margin-bottom: 80px;
 }
-.slider__wrapper{ /*обертка для всего слайдера*/
-  /*display: flex;
-  justify-content: center;*/
-  width: 1440px;
+
+.slider__wrapper { /*внешняя обертка для всего слайдера*/
   overflow: hidden; /*скрывает "лишнее" в слайдере*/
+  padding-top: 4px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
-.slider__list{ /*обертка для картинок*/
+
+.slider__list { /*обертка для картинок*/
   display: flex;
   justify-content: space-between;
   position: relative;
   left: -540px;
 }
-.slider__item{ /*картинки с подписями*/
+
+.slider__item { /*картинки с подписями*/
   position: relative;
   margin-left: 60px;
 }
-.slider__item:first-child{
+
+.slider__item:first-child {
   margin-left: 0px;
 }
-.country-img{
+
+.country-img {
   max-width: 800px;
   border-radius: 16px;
 }
-.country-name{
+
+.country-name {
   position: absolute;
   left: 15px;
-  bottom: 40px;
-  font-family: 'Red Hat Text', sans-serif;
+  bottom: 45px;
+  font-family: "Red Hat Text", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 32px;
@@ -293,111 +340,117 @@ h3 {
   text-transform: uppercase;
   color: #FFFFFF;
 }
-.slider__controls{ /*кнопки слайдера*/
+
+.slider__controls { /*кнопки слайдера*/
   margin: 15px auto 0px;
 }
+
 .button-left,
-.button-right{
+.button-right {
   background-color: rgba(242, 120, 92, 0.5);
   border-radius: 50px;
   padding: 10px;
   border: none;
 }
-.button-center{
+
+.button-center {
   background-color: #F2785C;
   border-radius: 50px;
   padding: 10px;
   border: none;
-  margin: 0px 10px;
+  margin: 0px 5px;
 }
 
 /*анимация карусели*/
-/*@keyframes move-left{
+/*@keyframes move-left {
   from {left: -540px;}
   to {left: 0px;}
 }
-.transition-left{
+.transition-left {
   animation-name: move-left;
   animation-duration: 5s;
 }
 
-@keyframes move-right{
+@keyframes move-right {
   from {left: -540px;}
   to {left: -1080px;}
 }
-.transition-right{
+.transition-right {
   animation-name: move-right;
   animation-duration: 5s;
 }*/
 
-.more{
+.more {
   margin: 40px auto 0px;
-  padding: 14px 36px 14px 85px;
-  background: #0D606F;
-  box-shadow: 0px 2px 3px rgba(13, 96, 111, 0.16);
-  border-radius: 10px;
-  border: none;
-  font-family: 'Red Hat Text', sans-serif;
+  padding: 14px 36px 14px 80px;
+  font-family: "Red Hat Text", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
   line-height: 32px;
   color: #FFFFFF;
-  background-image: url(./assets/svg/arrow.svg);
+  background-image: url("./assets/svg/arrow.svg");
   background-position: 32px;
   background-size: 40px;
   background-repeat: no-repeat;
+  background: #0D606F;
+  box-shadow: 0px 2px 3px rgba(13, 96, 111, 0.16);
+  border-radius: 10px;
+  border: none;
 }
 
 
-.stories__wraper{ /*внешняя обертка для всех стори*/
-  background-image: url(./assets/img/baskground_stories.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.stories__inner{ /*внутренняя обертка для всех стори*/
+.stories__inner { /*внутренняя обертка для всех стори*/
   display: flex;
   flex-direction: column;
   padding-bottom: 80px;
   padding: 0px 120px 40px;
   background-color: rgba(255, 255, 255, 0.7);
 }
-.stories__list{/*обертка для конкретной стори*/
+
+.stories__list {/*обертка для конкретной стори*/
   display: flex;
   justify-content: space-between;
   padding-top: 30px;
 }
-.stories__list:first-child{
+
+.stories__list:first-child {
   padding-top: 40px;
 }
-.stories__img{
+
+.stories__img {
   filter: drop-shadow(0px 4px 4px #0D606F);
-  max-width: 400px;
+  width: 400px;
+  height: 250px;
   border-radius: 16px;
 }
-.stories__item{
+
+.stories__item {
   padding-left: 40px;
   padding-right: 10px;
 }
-.stories__caption{
+
+.stories__caption {
   padding-bottom: 24px;
-  font-family: 'Aleo', serif;
+  font-family: "Aleo", serif;
   font-style: normal;
   font-weight: 400;
   font-size: 35px;
   line-height: 42px;
   color: #0D606F;
 }
-.stories__desc{
-  font-family: 'Aleo', serif;
+
+.stories__desc {
+  font-family: "Aleo", serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
   color: #0D606F;
 }
-.stories__link{
-  font-family: 'Aleo', serif;
+
+.stories__link {
+  font-family: "Aleo", serif;
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
@@ -407,43 +460,25 @@ h3 {
 }
 
 
-.footer{
-  background-image: url(./assets/img/baskground_stories.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: bottom;
-}
-.footer__wraper{
+.footer {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding: 0px 120px;
 }
-.copyright{
-  font-family: 'Red Hat Text', sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 21px;
-  color: #FFFFFF;
-}
-.social{
+
+.social {
   display: flex;
   justify-content: space-between;
   padding-left: 328px;
 }
-.social__item{
+
+.social__item {
   margin-left: 20px;
-  padding: 14px 0px 10px;
+  padding: 13px 0px 10px;
   max-width: 34px;
 }
-.social__item:first-child{
+
+.social__item:first-child {
   margin-left: 0px;
 }
-/*.social__link:hover,
-.social__link:active,
-.social__link:focus {
-  cursor: pointer;
-  filter: drop-shadow(0 0 5px #083942);
-  transition: .3s;
-}*/
