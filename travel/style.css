@@ -256,7 +256,6 @@ a {
 .social__link:focus {
   transition: 0.3s;
   filter: drop-shadow(0 0 15px #083942);
-  fill: #083942;
   cursor: pointer;
 }
 
