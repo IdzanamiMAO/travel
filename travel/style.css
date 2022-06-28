@@ -20,6 +20,9 @@ a {
   text-decoration: none;
 }
 
+.input{
+  padding: 0;
+}
 
 .body-wrap { /*Обертка для фоновых рисунков*/
   width: 100%;
@@ -230,6 +233,7 @@ a {
 .step__list {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
 }
 
 .step__item {
@@ -490,8 +494,8 @@ a {
 }*/
 
 
-/*мобильная верстка*/
-@media (max-width: 390px) {
+/*landscape phones, 320-390px*/
+@media screen and (min-width: 319px) and (max-width: 390px) {
   .content-wrap { /*ограничевает контент по ширине и центрирует его по центру*/
     max-width: 390px;
     margin: 0 auto;
@@ -513,7 +517,7 @@ a {
     /*border-radius: 30px; /*закруглен должен быть только сверху*/
   }
    .header { /*стили хэдра*/
-    padding: 43px 16px 3px;
+    padding: 43.5px 16px 9px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -527,23 +531,30 @@ a {
   
   .logo-headline {
     font-size: 0px;
-    line-height: 32px;
+    line-height: 30px;
   }
   
   .nav {
     background-image: url("./assets/svg/burger-menu-outline.svg");
     background-size: 35px;
     background-repeat: no-repeat;
-    padding: 19px;
+    padding: 17px;
   }
 
 
   /*появляющееся меню*/
   /*.nav__list { 
-    /*display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
     flex-direction: column;
     align-items: flex-end;
     padding: 44px 15px 30px 44px;
+    background-image: url("./assets/svg/clarity_window-close-line.svg");
+    background-position: 8px 8px;
+    background-size: 30px;
+    background-repeat: no-repeat;
     background-color: #F2785C;
     box-shadow: 0px 4px 3px rgba(13, 96, 111, 0.25);
     border-radius: 10px;;
@@ -551,10 +562,10 @@ a {
   
   .nav__item {
     padding-left: 0;
+
   }
   
-  .nav__link,
-   {
+  .nav__link {
     font-family: "Red Hat Text", sans-serif;
     font-style: normal;
     font-size: 16px;
@@ -579,23 +590,23 @@ a {
     padding: 58px 0 61px;
   }
   
-  .search-form__wrap {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
   .search-form__info {
     padding: 9px;
     background-color: rgba(255, 255, 255, 0.7);
     border: 0;
     border-radius: 16px;
   }
-  
+  .search-form__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
   .search-form__field,
   .search-form__field::placeholder {
-    width: 226px;
-    padding-left: 3px;
+    width: 170px;
+    padding: 0;
+    padding-left: 7.5px;
     font-size: 14px;
     line-height: 17px;
   }
@@ -622,25 +633,46 @@ a {
     margin-top: 20px;
   }
 
-  .step__item:nth-of-type(2) { /*выровнять текс слева для первой иконки, по центру - для второй, справа для третьей; задать ширину step__item?!, задать маргины для перовой и третьей иконки?! */
-    padding-left: 31px;
+   .step__item:nth-of-type(2) {
+    padding-left: 41px;
     padding-right: 26px;
     margin-left: 0;
   }
- 
-  .step__ico {
-    margin-bottom: 20px;
+
+    .step__ico {
+    margin-bottom: 19px;
     padding: 35px;
     background-size: 35px;
+  }
+
+  .step__item:nth-of-type(1) .step__ico {
+    margin-left: 0;
+  }
+
+    .step__item:nth-of-type(3) .step__ico {
+    margin-right: 0px;
   }
   
   .desc {
     font-size: 10px;
     line-height: 12px;
-    text-align: center;
   }
   
-  
+  .step__item:nth-of-type(1) .desc {
+    text-align: start;
+    max-width: 74px;
+  }
+
+  .step__item:nth-of-type(2) .desc {
+    text-align: center;
+  }
+
+  .step__item:nth-of-type(3) .desc {
+    text-align: end;
+    max-width: 90px;
+  }
+
+
 
   .destinations {
     margin-bottom: 20px;
@@ -767,7 +799,10 @@ a {
   }
   
   .social__item {
-    padding: 14px 0 13px;
+    padding: 15px 0 16px;
     max-width: 34px;
   }
 }
+
+
+/*tablets, 768px and up*/
