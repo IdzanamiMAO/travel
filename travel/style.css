@@ -173,7 +173,6 @@ a {
 }
 
 .search-form__field {
-  width: 500px;
   padding-left: 23px;
   font-family: "Aleo", serif;
   font-style: italic;
@@ -537,9 +536,7 @@ a {
     background-repeat: no-repeat;
     padding: 19px;
   }
-  .nav__list {
-    display: none;
-  }
+
 
   /*появляющееся меню*/
   /*.nav__list { 
@@ -557,7 +554,7 @@ a {
   }
   
   .nav__link,
-  .copyright {
+   {
     font-family: "Red Hat Text", sans-serif;
     font-style: normal;
     font-size: 16px;
@@ -565,10 +562,12 @@ a {
     font-weight: 500;
     color: #FFFFFF;
   }*/
-  
+
+  .nav__list,
   .login,
   .title,
-  .subtitle  {
+  .subtitle,
+  .copyright {
     display: none;
   }
   
@@ -614,9 +613,13 @@ a {
   }
   
   .caption {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-size: 14px;
     line-height: 19px;
+  }
+
+  .step__list {
+    margin-top: 20px;
   }
 
   .step__item:nth-of-type(2) { /*выровнять текс слева для первой иконки, по центру - для второй, справа для третьей; задать ширину step__item?!, задать маргины для перовой и третьей иконки?! */
@@ -634,75 +637,59 @@ a {
   .desc {
     font-size: 10px;
     line-height: 12px;
-    text-align: justify;
+    text-align: center;
   }
   
   
-  ---------------------------------------------------------------------
+
   .destinations {
-    margin-bottom: 80px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+    margin-bottom: 20px;
   }
   
   .slider__wrapper { /*внешняя обертка для всего слайдера*/
-    padding-top: 4px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    overflow: hidden; /*скрывает "лишнее" в слайдере*/
+    margin-top: 10px;
+    padding: 0 15px;
   }
   
   .slider__list { /*обертка для картинок*/
-    position: relative;
-    left: -540px;
-    display: flex;
-    justify-content: space-between;
+    left: 0px;
   }
   
   .slider__item { /*картинки с подписями*/
-    position: relative;
-    margin-left: 60px;
-  }
-  
-  .slider__item:first-child {
-    margin-left: 0;
+    margin-left: 20px;
   }
   
   .country-img {
-    max-width: 800px;
+    max-width: 360px;
+    max-height: 210px;
     border-radius: 16px;
   }
   
   .country-name {
-    position: absolute;
-    bottom: 45px;
+    top: 8px;
     left: 15px;
-    font-family: "Red Hat Text", sans-serif;
-    font-style: normal;
-    font-size: 32px;
-    line-height: 42px;
-    font-weight: 500;
-    color: #FFFFFF;
-    text-transform: uppercase;
+    font-size: 20px;
+    line-height: 26px;
   }
   
   .slider__controls { /*кнопки слайдера*/
-    margin: 15px auto 0;
+    position: absolute;
+    bottom: 163px;
+    left: 177px;
+    margin: 0 auto;
   }
   
   .button-left,
   .button-right {
-    padding: 10px;
+    padding: 4px;
     background-color: rgba(242, 120, 92, 0.5);
     border: none;
     border-radius: 50px;
   }
   
   .button-center {
-    margin: 0 5px;
-    padding: 10px;
+    margin: 0 2px;
+    padding: 4px;
     background-color: #F2785C;
     border: none;
     border-radius: 50px;
@@ -728,111 +715,59 @@ a {
   }*/
   
   .more {
-    margin: 40px auto 0;
-    padding: 14px 36px 14px 80px;
-    font-family: "Red Hat Text", sans-serif;
-    font-style: normal;
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: 500;
-    color: #FFFFFF;
-    background-image: url("./assets/svg/arrow.svg");
-    background-position: 32px;
-    background-size: 40px;
-    background-repeat: no-repeat;
-    background-color: #0D606F;
-    box-shadow: 0 2px 3px rgba(13, 96, 111, 0.16);
-    border: none;
-    border-radius: 10px;
+    margin: 6px auto 0;
+    padding: 7.5px 12px 7.5px 28px;
+    font-size: 11px;
+    line-height: 15px;
+    background-position: 12px;
+    background-size: 10px;
   }
   
   
   .stories__inner { /*внутренняя обертка для всех стори*/
-    padding: 0 120px 40px;
-    display: flex;
-    flex-direction: column;
-    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px 15px 12px;
   }
   
   .stories__list {/*обертка для конкретной стори*/
-    display: flex;
-    justify-content: space-between;
-    padding-top: 30px;
+    padding-top: 14px;
   }
   
   .stories__list:first-child {
-    padding-top: 40px;
+    padding-top: 0px;
   }
-  
+
   .stories__img {
-    width: 400px;
-    height: 250px;
-    border-radius: 16px;
-    filter: drop-shadow(0px 4px 4px #0D606F);
+    width: 155px;
+    height: 130px;
   }
   
   .stories__item {
-    padding: 0 10px 0 40px;
+    padding: 0 0 0 10px;
   }
   
   .stories__caption {
-    padding-bottom: 24px;
-    font-family: "Aleo", serif;
-    font-style: normal;
-    font-size: 35px;
-    line-height: 42px;
-    font-weight: 400;
-    color: #0D606F;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    font-size: 11px;
+    line-height: 13px;
+    font-weight: 700;
   }
   
   .stories__desc {
-    font-family: "Aleo", serif;
-    font-style: normal;
-    font-size: 20px;
-    line-height: 24px;
-    font-weight: 400;
-    color: #0D606F;
+    max-height: 85px;
+    overflow: hidden;
+    font-size: 9px;
+    line-height: 11px;
+
   }
-  
+
   .stories__link {
-    font-family: "Aleo", serif;
-    font-style: normal;
-    font-size: 20px;
-    line-height: 24px;
-    font-weight: 700;
-    color: #0D606F;
-    text-decoration-line: underline;
-  }
-  
-  
-  .footer {
-    padding: 0 120px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
-  
-  .social {
-    display: flex;
-    justify-content: space-between;
-    padding-left: 328px;
+    font-size: 9px;
+    line-height: 11px;
   }
   
   .social__item {
-    margin-left: 20px;
-    padding: 13px 0 10px;
+    padding: 14px 0 13px;
     max-width: 34px;
   }
-  
-  .social__item:first-child {
-    margin-left: 0;
-  }
-  
-  /*.social__link:hover, /* для svg*/
-  /*.social__link:active,
-  .social__link:focus {
-    transition: 0.3s;
-    fill: #083942;
-    cursor: pointer;
-  }*/
 }
