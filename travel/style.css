@@ -78,7 +78,7 @@ a {
   padding-left: 42px;
 }
 
-.nav__item:first-child {
+.nav__item:first-of-type {
   padding-left: 0;
 }
 
@@ -323,7 +323,7 @@ a {
   margin-left: 60px;
 }
 
-.slider__item:first-child {
+.slider__item:first-of-type {
   margin-left: 0;
 }
 
@@ -417,7 +417,7 @@ a {
   padding-top: 30px;
 }
 
-.stories__list:first-child {
+.stories__list:first-of-type {
   padding-top: 40px;
 }
 
@@ -481,7 +481,7 @@ a {
   max-width: 34px;
 }
 
-.social__item:first-child {
+.social__item:first-of-type {
   margin-left: 0;
 }
 
@@ -617,7 +617,7 @@ a {
     line-height: 15px;
   }
   
-
+  
   .steps {
     margin-bottom: 20px;
     padding: 0 15px;
@@ -628,28 +628,28 @@ a {
     font-size: 14px;
     line-height: 19px;
   }
-
+  
   .step__list {
     margin-top: 20px;
   }
-
-   .step__item:nth-of-type(2) {
+  
+  .step__item:nth-of-type(2) {
     padding-left: 41px;
     padding-right: 26px;
     margin-left: 0;
   }
-
-    .step__ico {
+  
+  .step__ico {
     margin-bottom: 19px;
     padding: 35px;
     background-size: 35px;
   }
-
+  
   .step__item:nth-of-type(1) .step__ico {
     margin-left: 0;
   }
-
-    .step__item:nth-of-type(3) .step__ico {
+  
+  .step__item:nth-of-type(3) .step__ico {
     margin-right: 0px;
   }
   
@@ -662,25 +662,42 @@ a {
     text-align: start;
     max-width: 74px;
   }
-
+  
   .step__item:nth-of-type(2) .desc {
     text-align: center;
   }
-
+  
   .step__item:nth-of-type(3) .desc {
     text-align: end;
     max-width: 90px;
   }
-
-
-
+  
+  .step__item:hover,
+  .step__item:active,
+  .step__item:focus,
+  .slider__item:hover,
+  .slider__item:active,
+  .slider__item:focus,
+  .stories__list:hover,
+  .stories__list:active,
+  .stories__list:focus,
+  .social__link:hover,
+  .social__link:active,
+  .social__link:focus {
+    transition: none;
+    filter: none;
+    cursor: pointer;
+  }
+  
+  
   .destinations {
     margin-bottom: 20px;
   }
   
   .slider__wrapper { /*внешняя обертка для всего слайдера*/
-    margin-top: 10px;
+    margin: 10px 0;
     padding: 0 15px;
+    max-width: 100%;
   }
   
   .slider__list { /*обертка для картинок*/
@@ -704,9 +721,9 @@ a {
     line-height: 26px;
   }
   
-  .slider__controls { /*кнопки слайдера*/
+  .slider__controls { /*кнопки-точки слайдера*/
     position: absolute;
-    bottom: 163px;
+    bottom: 162px;
     left: 177px;
     margin: 0 auto;
   }
@@ -747,30 +764,36 @@ a {
   }*/
   
   .more {
-    margin: 6px auto 0;
+    margin: 0 auto;
     padding: 7.5px 12px 7.5px 28px;
     font-size: 11px;
     line-height: 15px;
     background-position: 12px;
     background-size: 10px;
   }
+
   
   
   .stories__inner { /*внутренняя обертка для всех стори*/
-    padding: 10px 15px 12px;
+    padding: 10px 15px 13px;
   }
   
   .stories__list {/*обертка для конкретной стори*/
-    padding-top: 14px;
+    padding-top: 15px;
+    max-width: 100%;
   }
   
-  .stories__list:first-child {
-    padding-top: 0px;
+  .stories__list:first-of-type {
+    padding-top: 0;
+  }
+
+  .stories__list:last-of-type {
+    margin-bottom: 10px;
   }
 
   .stories__img {
-    width: 155px;
-    height: 130px;
+    max-width: 155px;
+    max-height: 130px;
   }
   
   .stories__item {
@@ -778,7 +801,7 @@ a {
   }
   
   .stories__caption {
-    padding-top: 5px;
+    padding-top: 5px; /*а если 2px вместо 5px - идеально*/
     padding-bottom: 10px;
     font-size: 11px;
     line-height: 13px;
@@ -786,23 +809,23 @@ a {
   }
   
   .stories__desc {
-    max-height: 85px;
+    max-height: 87px;
     overflow: hidden;
     font-size: 9px;
     line-height: 11px;
 
   }
-
+  
   .stories__link {
     font-size: 9px;
     line-height: 11px;
   }
   
   .social__item {
-    padding: 15px 0 16px;
+    padding: 13px 0 14px; /*а если 13px 0 14px вместо 15px 0 16px - идеально*/
     max-width: 34px;
   }
 }
 
 
-/*tablets, 768px and up*/
+/*tablets, 768px and up (ipad mini)*/
