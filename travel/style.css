@@ -821,6 +821,7 @@ a {
     line-height: 11px;
   }
   
+  
   .social__item {
     padding: 13px 0 14px; /*а если 13px 0 14px вместо 15px 0 16px - идеально*/
     max-width: 34px;
