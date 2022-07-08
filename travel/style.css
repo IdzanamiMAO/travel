@@ -33,22 +33,18 @@ a {
   background-color: #FFFFFF;
 }
 
-.header-wrap { /*Обертка, чтобы цвет фона хэдра тянулся на весь экран*/
-  background-color: rgba(242, 120, 92, 0.7);
-  box-shadow: 0 4px 4px rgba(13, 96, 111, 0.5);
-}
-
 .content-wrap { /*ограничевает контент по ширине и центрирует его по центру*/
   max-width: 1440px;
   margin: 0 auto;
 }
-
 
 .header { /*стили хэдра*/
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 25px 120px;
+  background-color: rgba(242, 120, 92, 0.7);
+  box-shadow: 0 4px 4px rgba(13, 96, 111, 0.5);
 }
 
 .logo {
@@ -100,6 +96,10 @@ a {
   cursor: pointer;
 }
 
+.mobile-menu {
+  display: none;
+}
+
 .login {
   margin-left: 30px;
   padding: 10px 30px;
@@ -131,7 +131,8 @@ a {
 
 
 .preview {
-  margin: 32px 428px 301px 120px;
+  margin: 32px 120px;
+  max-width: 892px;
 }
 
 .inner {
@@ -329,6 +330,7 @@ a {
 
 .country-img {
   max-width: 800px;
+  height: auto;
   border-radius: 16px;
 }
 
@@ -422,8 +424,8 @@ a {
 }
 
 .stories__img {
-  width: 400px;
-  height: 250px;
+  max-width: 400px;
+  height: auto;
   border-radius: 16px;
   filter: drop-shadow(0px 4px 4px #0D606F);
 }
@@ -504,23 +506,21 @@ a {
   .body-wrap { /*Обертка для фоновых рисунков*/
     width: 100%;
     background:
-    url("./assets/img-mob/background-header-mobile.jpg") top no-repeat, 
-    url("./assets/img-mob/background-stories-mobile.jpg")bottom no-repeat;
+    url("./assets/img-mob/mobile_background_header.jpg") top no-repeat, 
+    url("./assets/img-mob/mobile_background_stories.jpg")bottom no-repeat;
     background-size: 390px auto;
     background-color: #FFFFFF;
     border-radius: 30px;
   }
 
-  .header-wrap { /*Обертка, чтобы цвет фона хэдра тянулся на весь экран*/
-    background-color: rgba(242, 120, 92, 0.7);
-    box-shadow: 0 4px 4px rgba(13, 96, 111, 0.5);
-    /*border-radius: 30px; /*закруглен должен быть только сверху*/
-  }
    .header { /*стили хэдра*/
-    padding: 43.5px 16px 9px;
+    padding: 41px 16px 9px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: none;
+    background: linear-gradient(rgba(13, 96, 111, 1), rgba(13, 96, 111, 0));
+    border-radius: 30px;
   }
   
   .logo {
@@ -539,40 +539,66 @@ a {
     background-size: 35px;
     background-repeat: no-repeat;
     padding: 17px;
+    margin-right: 4px;
+  }
+  
+  /*появляющееся меню*/
+  .mobile-menu {
+    display: block;
+    position: absolute;
+    left: 0; right: 0; top: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    
+  }
+  
+  .mobile-nav {
+    display: flex;
   }
 
-
-  /*появляющееся меню*/
-  /*.nav__list { 
+  .mobile-nav__list {
     position: absolute;
     top: 0;
     right: 0;
+    z-index: 999;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     padding: 44px 15px 30px 44px;
-    background-image: url("./assets/svg/clarity_window-close-line.svg");
-    background-position: 8px 8px;
-    background-size: 30px;
-    background-repeat: no-repeat;
     background-color: #F2785C;
     box-shadow: 0px 4px 3px rgba(13, 96, 111, 0.25);
     border-radius: 10px;;
   }
   
-  .nav__item {
+  .mobile-nav__item {
     padding-left: 0;
-
+    margin-bottom: 10px;
   }
   
-  .nav__link {
+  .mobile-nav__item:last-of-type {
+    margin-bottom: 0;
+  }
+  
+  .mobile-nav__link {
     font-family: "Red Hat Text", sans-serif;
     font-style: normal;
     font-size: 16px;
     line-height: 21px;
     font-weight: 500;
     color: #FFFFFF;
-  }*/
+  }
+  .exit {
+    position: absolute;
+    top: 8px;
+    right: 127px;
+    z-index: 9999;
+    padding: 15px;
+    background-image: url("./assets/svg/clarity_window-close-line.svg");
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+  }
+  
+  
 
   .nav__list,
   .login,
@@ -604,7 +630,7 @@ a {
 
   .search-form__field,
   .search-form__field::placeholder {
-    width: 170px;
+    max-width: 170px;
     padding: 0;
     padding-left: 7.5px;
     font-size: 14px;
@@ -710,7 +736,7 @@ a {
   
   .country-img {
     max-width: 360px;
-    max-height: 210px;
+    max-height: auto;
     border-radius: 16px;
   }
   
@@ -793,7 +819,7 @@ a {
 
   .stories__img {
     max-width: 155px;
-    max-height: 130px;
+    height: auto;
   }
   
   .stories__item {
