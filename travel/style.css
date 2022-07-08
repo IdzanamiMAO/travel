@@ -131,7 +131,7 @@ a {
 
 
 .preview {
-  margin: 32px 120px;
+  margin: 32px 120px 300px;
   max-width: 892px;
 }
 
@@ -506,8 +506,8 @@ a {
   .body-wrap { /*Обертка для фоновых рисунков*/
     width: 100%;
     background:
-    url("./assets/img-mob/mobile_background_header.jpg") top no-repeat, 
-    url("./assets/img-mob/mobile_background_stories.jpg")bottom no-repeat;
+    url("./assets/img/mobile_background_header.jpg") top no-repeat, 
+    url("./assets/img/mobile_background_stories.jpg")bottom no-repeat;
     background-size: 390px auto;
     background-color: #FFFFFF;
     border-radius: 30px;
@@ -535,7 +535,7 @@ a {
   }
   
   .nav {
-    background-image: url("./assets/svg/burger-menu-outline.svg");
+    background-image: url("./assets/svg/burger_menu_outline.svg");
     background-size: 35px;
     background-repeat: no-repeat;
     padding: 17px;
@@ -592,7 +592,7 @@ a {
     right: 127px;
     z-index: 9999;
     padding: 15px;
-    background-image: url("./assets/svg/clarity_window-close-line.svg");
+    background-image: url("./assets/svg/clarity_window_close_line.svg");
     background-repeat: no-repeat;
     background-color: transparent;
     border: none;
