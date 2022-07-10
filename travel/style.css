@@ -8,7 +8,8 @@ ul,
 h1,
 h2,
 h3,
-fieldset {
+fieldset,
+picture {
   margin: 0;
 }
 
@@ -253,9 +254,12 @@ a {
 .slider__item:hover,
 .slider__item:active,
 .slider__item:focus,
-.stories__list:hover,
-.stories__list:active,
-.stories__list:focus,
+.stories__img:hover,
+.stories__img:active,
+.stories__img:focus,
+.stories__link:hover,
+.stories__link:active,
+.stories__link:focus,
 .social__link:hover,
 .social__link:active,
 .social__link:focus {
@@ -319,6 +323,10 @@ a {
   justify-content: space-between;
 }
 
+.slider__arrow{
+  display: none;
+}
+
 .slider__item { /*картинки с подписями*/
   position: relative;
   margin-left: 60px;
@@ -351,21 +359,28 @@ a {
   margin: 15px auto 0;
 }
 
-.button-left,
-.button-right {
+.button-inactive{
   padding: 10px;
   background-color: rgba(242, 120, 92, 0.5);
   border: none;
   border-radius: 50px;
 }
 
-.button-center {
+.button-inactive:nth-of-type(2){
   margin: 0 5px;
   padding: 10px;
   background-color: #F2785C;
   border: none;
   border-radius: 50px;
 }
+
+/*.button-active {
+  margin: 0 5px;
+  padding: 10px;
+  background-color: #F2785C;
+  border: none;
+  border-radius: 50px;
+}*/
 
 /*анимация карусели*/
 /*@keyframes move-left {
@@ -416,6 +431,7 @@ a {
 .stories__list {/*обертка для конкретной стори*/
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   padding-top: 30px;
 }
 
@@ -431,7 +447,7 @@ a {
 }
 
 .stories__item {
-  padding: 0 10px 0 40px;
+  padding: 0 40px 0;
 }
 
 .stories__caption {
@@ -445,6 +461,11 @@ a {
 }
 
 .stories__desc {
+  margin: 0;
+  -webkit-line-clamp: 6;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   font-family: "Aleo", serif;
   font-style: normal;
   font-size: 20px;
@@ -506,8 +527,8 @@ a {
   .body-wrap { /*Обертка для фоновых рисунков*/
     width: 100%;
     background:
-    url("./assets/img/mobile_background_header.jpg") top no-repeat, 
-    url("./assets/img/mobile_background_stories.jpg")bottom no-repeat;
+    url("./assets/img-mob/background-header-mobile.jpg") top no-repeat, 
+    url("./assets/img-mob/background-stories-mobile.jpg")bottom no-repeat;
     background-size: 390px auto;
     background-color: #FFFFFF;
     border-radius: 30px;
@@ -535,15 +556,16 @@ a {
   }
   
   .nav {
-    background-image: url("./assets/svg/burger_menu_outline.svg");
+    background-image: url("./assets/svg/burger-menu-outline.svg");
     background-size: 35px;
     background-repeat: no-repeat;
     padding: 17px;
     margin-right: 4px;
   }
   
+  
   /*появляющееся меню*/
-  .mobile-menu {
+  /*.mobile-menu {
     display: block;
     position: absolute;
     left: 0; right: 0; top: 0; bottom: 0;
@@ -592,14 +614,13 @@ a {
     right: 127px;
     z-index: 9999;
     padding: 15px;
-    background-image: url("./assets/svg/clarity_window_close_line.svg");
+    background-image: url("./assets/svg/clarity_window-close-line.svg");
     background-repeat: no-repeat;
     background-color: transparent;
     border: none;
   }
+  */
   
-  
-
   .nav__list,
   .login,
   .title,
@@ -607,7 +628,7 @@ a {
   .copyright {
     display: none;
   }
-  
+
   .preview {
     margin: 0 15px 20px;
   }
@@ -642,8 +663,8 @@ a {
     font-size: 11px;
     line-height: 15px;
   }
-  
-  
+
+
   .steps {
     margin-bottom: 20px;
     padding: 0 15px;
@@ -704,9 +725,12 @@ a {
   .slider__item:hover,
   .slider__item:active,
   .slider__item:focus,
-  .stories__list:hover,
-  .stories__list:active,
-  .stories__list:focus,
+  .stories__img:hover,
+  .stories__img:active,
+  .stories__img:focus,
+  .stories__link:hover,
+  .stories__link:active,
+  .stories__link:focus,
   .social__link:hover,
   .social__link:active,
   .social__link:focus {
@@ -721,11 +745,29 @@ a {
   }
   
   .slider__wrapper { /*внешняя обертка для всего слайдера*/
-    margin: 10px 0;
+    margin: 10px 0 7px;
     padding: 0 15px;
     max-width: 100%;
   }
+  .slider__arrow{
+    display: block;
+    position: absolute;
+    z-index: 2;
+    background-size: 30px;
+    background-repeat: no-repeat;
+    padding: 15px;
+  }
+
+  .left{
+    background-image: url("./assets/svg/ep_arrow-left.svg");
+    left: 20px;
+  }
   
+  .right{
+    background-image: url("./assets/svg/ep_arrow-right.svg");
+    right: 20px;
+  }
+
   .slider__list { /*обертка для картинок*/
     left: 0px;
   }
@@ -736,8 +778,6 @@ a {
   
   .country-img {
     max-width: 360px;
-    max-height: auto;
-    border-radius: 16px;
   }
   
   .country-name {
@@ -754,21 +794,33 @@ a {
     margin: 0 auto;
   }
   
-  .button-left,
-  .button-right {
+  .button-inactive,
+  .button-inactive:nth-of-type(2) {
+    margin: 0;
     padding: 4px;
     background-color: rgba(242, 120, 92, 0.5);
     border: none;
     border-radius: 50px;
   }
-  
-  .button-center {
+
+
+
+  .button-inactive:nth-of-type(1){
     margin: 0 2px;
     padding: 4px;
     background-color: #F2785C;
     border: none;
     border-radius: 50px;
   }
+
+
+  /*.button-active {
+    margin: 0 2px;
+    padding: 4px;
+    background-color: #F2785C;
+    border: none;
+    border-radius: 50px;
+  }*/
   
   /*анимация карусели*/
   /*@keyframes move-left {
@@ -805,7 +857,7 @@ a {
   }
   
   .stories__list {/*обертка для конкретной стори*/
-    padding-top: 15px;
+    padding-top: 10px;
     max-width: 100%;
   }
   
@@ -814,7 +866,7 @@ a {
   }
 
   .stories__list:last-of-type {
-    margin-bottom: 10px;
+    margin-bottom: 7px;
   }
 
   .stories__img {
@@ -835,18 +887,15 @@ a {
   }
   
   .stories__desc {
-    max-height: 87px;
-    overflow: hidden;
+    -webkit-line-clamp: 8;
     font-size: 9px;
     line-height: 11px;
-
   }
   
   .stories__link {
     font-size: 9px;
     line-height: 11px;
   }
-  
   
   .social__item {
     padding: 13px 0 14px; /*а если 13px 0 14px вместо 15px 0 16px - идеально*/
