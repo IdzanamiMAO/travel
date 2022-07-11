@@ -43,6 +43,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   padding: 25px 120px;
   background-color: rgba(242, 120, 92, 0.7);
   box-shadow: 0 4px 4px rgba(13, 96, 111, 0.5);
@@ -402,7 +403,7 @@ a {
 }*/
 
 .more {
-  margin: 40px auto 0;
+  margin: 38px auto 0;
   padding: 14px 36px 14px 80px;
   font-family: "Red Hat Text", sans-serif;
   font-style: normal;
@@ -431,8 +432,7 @@ a {
 .stories__list {/*обертка для конкретной стори*/
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  padding-top: 30px;
+  padding-top: 26px;
 }
 
 .stories__list:first-of-type {
@@ -447,7 +447,7 @@ a {
 }
 
 .stories__item {
-  padding: 0 40px 0;
+  padding: 0 10px 0 40px;;
 }
 
 .stories__caption {
@@ -563,25 +563,35 @@ a {
     margin-right: 4px;
   }
   
-  
+  .mobile-menu {
+  display: block;
+  }
+
+
   /*появляющееся меню*/
-  /*.mobile-menu {
+  .active { /*overlay*/
     display: block;
     position: absolute;
+    z-index: 998;
     left: 0; right: 0; top: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.8);
-    
+    background: rgba(0, 0, 0, 0.7);
+    transition: right .8s;
   }
   
   .mobile-nav {
     display: flex;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    transition: right 1s;
+  }
+
+  .change {
+    right: 0;
+    display: block;
   }
 
   .mobile-nav__list {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 999;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -619,7 +629,7 @@ a {
     background-color: transparent;
     border: none;
   }
-  */
+  
   
   .nav__list,
   .login,
