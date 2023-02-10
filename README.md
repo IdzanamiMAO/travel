@@ -21,7 +21,7 @@ Skils:
  
  *************************
 
-[Deploy](https://rolling-scopes-school.github.io/idzanamimao-JSFEPRESCHOOL2022Q2/travel/)
+[Deploy](https://idzanamimao.github.io/travel/)
 
 [Layout](https://www.figma.com/file/BhULVGGIachSAjoBazhP9P/Travel?node-id=0%3A1&t=NOnWinwbp7wfqMSO-0)
 
