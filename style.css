@@ -92,14 +92,6 @@ a {
   color: #FFFFFF;
 }
 
-.nav__link:hover,
-.nav__link:active,
-.nav__link:focus {
-  color: #083942;
-  transition: 0.3s;
-  cursor: pointer;
-}
-
 .mobile-menu {
   display: none;
 }
@@ -118,21 +110,6 @@ a {
   border-radius: 10px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), 0 2px 3px rgba(13, 96, 111, 0.16);
 }
-
-.login:hover,
-.login:focus,
-.login:active,
-.search-form__submit:hover,
-.search-form__submit:focus,
-.search-form__submit:active,
-.more:hover,
-.more:focus,
-.more:active {
-  background-color: #083942;
-  transition: 0.3s;
-  cursor: pointer;
-}
-
 
 .preview {
   margin: 32px 8.3% 302px;
@@ -250,46 +227,13 @@ a {
   margin-left: 70px;
 }
 
-.step__item:hover,
-.step__item:active,
-.step__item:focus,
-.slider__item:hover,
-.slider__item:active,
-.slider__item:focus,
-.stories__img:hover,
-.stories__img:active,
-.stories__img:focus,
-.stories__link:hover,
-.stories__link:active,
-.stories__link:focus,
-.social__link:hover,
-.social__link:active,
-.social__link:focus {
-  transition: 0.3s;
-  filter: drop-shadow(0 0 15px #083942);
-  cursor: pointer;
-}
-
 .step__ico {
   margin: 0 auto 30px;
-  padding: 50px;
+  padding: 25px;
   background-position: center;
-  background-size: 50px;
   background-repeat: no-repeat;
   border-radius: 16px;
   background-color: #F2785C;
-}
-
-.step-1 {
-  background-image: url("./assets/svg/ToDo.svg");
-}
-
-.step-2 {
-  background-image: url("./assets/svg/dates.svg");
-}
-
-.step-3 {
-  background-image: url("./assets/svg/recomendation.svg");
 }
 
 .desc {
@@ -516,13 +460,49 @@ a {
   margin-left: 0;
 }
 
-/*.social__link:hover, /* для svg*/
-/*.social__link:active,
-.social__link:focus {
+
+
+/*ховер эффекты*/
+.nav__link:hover { /*эффекты меню-бара*/
+  color: #083942;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.button__login:hover, /*эффекты кнопок*/
+.search-form__submit:hover,
+.more:hover {
+  background-color: #083942;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.step__item:hover, /*необязательные красивости*/
+.slider__item:hover,
+.stories__link:hover,
+.social__link:hover {
+  transition: 0.3s;
+  filter: drop-shadow(0 0 15px #083942);
+  cursor: pointer;
+}
+
+.step__item:hover .svg { /*эффекты свг в иконках шагов*/
   transition: 0.3s;
   fill: #083942;
   cursor: pointer;
-}*/
+}
+
+.social__item:hover .svg { /*выделение иконок соцсетей*/
+  transition: 0.3s;
+  fill: #083942;
+  cursor: pointer;
+}
+
+.social__item:hover .svg2 { /*выделение иконки ютуба*/
+  transition: 0.3s;
+  stroke: #083942;
+  cursor: pointer;
+}
 
 
 
@@ -755,8 +735,12 @@ a {
 
   .step__ico {
     margin-bottom: 19px;
-    padding: 35px;
-    background-size: 35px;
+    padding: 18px;
+  }
+
+  .step__ico svg {
+    width: 35px;
+    height: 35px;
   }
 
   .desc {
