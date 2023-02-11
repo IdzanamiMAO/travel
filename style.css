@@ -253,9 +253,13 @@ a {
   flex-direction: column;
 }
 
+.caption--destinations {
+  margin-bottom: 0;
+}
+
 .slider__wrapper { /*внешняя обертка для всего слайдера*/
   position: relative;
-  padding-top: 6px;
+  padding-top: 46px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -462,51 +466,52 @@ a {
 
 
 
-/*ховер эффекты*/
-.nav__link:hover { /*эффекты меню-бара*/
-  color: #083942;
-  transition: 0.3s;
-  cursor: pointer;
+@media (hover: hover) and (pointer: fine) { /*ховер эффекты*/
+  .nav__link:hover { /*эффекты меню-бара*/
+    color: #083942;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+
+  .button__login:hover, /*эффекты кнопок*/
+  .search-form__submit:hover,
+  .more:hover {
+    background-color: #083942;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+
+  .step__item:hover, /*необязательные красивости*/
+  .slider__item:hover,
+  .stories__link:hover,
+  .social__link:hover {
+    transition: 0.3s;
+    filter: drop-shadow(0 0 15px #083942);
+    cursor: pointer;
+  }
+
+  .step__item:hover .svg { /*эффекты свг в иконках шагов*/
+    transition: 0.3s;
+    fill: #083942;
+    cursor: pointer;
+  }
+
+  .social__item:hover .svg { /*выделение иконок соцсетей*/
+    transition: 0.3s;
+    fill: #083942;
+    cursor: pointer;
+  }
+
+  .social__item:hover .svg2 { /*выделение иконки ютуба*/
+    transition: 0.3s;
+    stroke: #083942;
+    cursor: pointer;
+  }
 }
 
-.button__login:hover, /*эффекты кнопок*/
-.search-form__submit:hover,
-.more:hover {
-  background-color: #083942;
-  transition: 0.3s;
-  cursor: pointer;
-}
-
-.step__item:hover, /*необязательные красивости*/
-.slider__item:hover,
-.stories__link:hover,
-.social__link:hover {
-  transition: 0.3s;
-  filter: drop-shadow(0 0 15px #083942);
-  cursor: pointer;
-}
-
-.step__item:hover .svg { /*эффекты свг в иконках шагов*/
-  transition: 0.3s;
-  fill: #083942;
-  cursor: pointer;
-}
-
-.social__item:hover .svg { /*выделение иконок соцсетей*/
-  transition: 0.3s;
-  fill: #083942;
-  cursor: pointer;
-}
-
-.social__item:hover .svg2 { /*выделение иконки ютуба*/
-  transition: 0.3s;
-  stroke: #083942;
-  cursor: pointer;
-}
 
 
-
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
   .logo {
     background-size: 20px;
   }
@@ -558,11 +563,11 @@ a {
 
 
 
-@media screen and (max-width: 550px) {
+@media (max-width: 550px) {
   .body-wrap {
     width: 100%;
     background:
-    url("./assets/img-mob/background-header-mobile.jpg") top no-repeat, 
+    url("./assets/img-mob/background-header-mobile.jpg") top no-repeat,
     url("./assets/img-mob/background-stories-mobile.jpg")bottom no-repeat;
     background-size: 600px auto;
     background-color: #FFFFFF;
@@ -784,7 +789,7 @@ a {
   .slider__list { /*обертка для картинок*/
     left: 0px;
     max-width: 450px;
-    margin: 0 10px 15px;
+    margin: 0 0 15px;
     overflow: hidden;
   }
 
@@ -793,7 +798,7 @@ a {
   }
 
   .country-img {
-    max-width: 400px;
+    max-width: 360px;
   }
 
   .country-name {
@@ -895,7 +900,7 @@ a {
 
 
 /*landscape phones, 320-390px*/
-@media screen and (max-width: 390px) {
+@media (max-width: 390px) {
   .content-wrap { /*ограничевает контент по ширине и центрирует его*/
     max-width: 390px;
     margin: 0 auto;
@@ -937,7 +942,6 @@ a {
     font-size: 14px;
     line-height: 17px;
   }
-
 
   .search-form__submit {
     padding: 7.5px 9px;
@@ -987,26 +991,6 @@ a {
   .step__item:nth-of-type(3) .desc {
     text-align: end;
     max-width: 90px;
-  }
-
-  .step__item:hover,
-  .step__item:active,
-  .step__item:focus,
-  .slider__item:hover,
-  .slider__item:active,
-  .slider__item:focus,
-  .stories__img:hover,
-  .stories__img:active,
-  .stories__img:focus,
-  .stories__link:hover,
-  .stories__link:active,
-  .stories__link:focus,
-  .social__link:hover,
-  .social__link:active,
-  .social__link:focus {
-    transition: none;
-    filter: none;
-    cursor: pointer;
   }
 
   .destinations {
