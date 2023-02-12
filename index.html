@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="./assets/ico/favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,400;0,700;1,400;1,700&family=Magra:wght@700&family=Red+Hat+Text:wght@500&display=swap" rel="stylesheet">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,400;0,700;1,400;1,700&family=Magra:wght@700&family=Red+Hat+Text:wght@400;500&display=swap" rel="stylesheet"> -->
   </head>
   <body>
     <div class="body-wrap">
@@ -61,6 +61,25 @@
               </li>
             </ul>
           </nav>
+        </div>
+        <div class="login__pop-up">
+          <h2 class="login__caption">Log in to your account</h2>
+          <button class="login__button Facebook">Sign In with Facebook</button>
+          <button class="login__button Google">Sign In with Google</button>
+          <p class="login--span">or</p>
+          <form class="form__signin"action="" method="get">
+            <div class="form__email">
+              <label class="form__label" for="email">E-mail</label>
+              <input class="form__input" type="email" name="email" id="email" required>
+            </div>
+            <div class="form__email">
+              <label class="form__label" for="password">Password</label>
+              <input class="form__input" type="password" name="password" id="password" required>
+            </div>
+              <input class="form__button" type="submit" value="Sign In">
+          </form>
+          <p class="login__text login__text--highlight forgot">Forgot Your Password?</p>
+          <p class="login__text account">Don&prime;t have an account? <span class="login__text--highlight register">Register</span></p>
         </div>
       </header>
       <main class="inner content-wrap">

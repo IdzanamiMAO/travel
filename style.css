@@ -27,6 +27,53 @@ a {
   padding: 0;
 }
 
+/*ШРИФТЫ*/
+@font-face {
+  font-family: "Aleo-Bold";
+  src: url("./assets/fonts/Aleo-Bold.ttf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Aleo-BoldItalic";
+  src: url("./assets/fonts/Aleo-BoldItalic.ttf");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Aleo-Regular";
+  src: url("./assets/fonts/Aleo-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Aleo-RegularItalic";
+  src: url("./assets/fonts/Aleo-RegularItalic.ttf");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Magra-Bold";
+  src: url("./assets/fonts/Magra-Bold.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "RedHatText-Medium";
+  src: url("./assets/fonts/RedHatText-Medium.ttf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "RedHatText-Regular";
+  src: url("./assets/fonts/RedHatText-Regular.ttf");
+  font-weight: 400;
+}
+
+
+
 .body-wrap { /*Обертка для фоновых рисунков*/
   width: 100%;
   background:
@@ -59,7 +106,7 @@ a {
 
 .logo-headline {
   padding-left: 38px;
-  font-family: "Magra", sans-serif;
+  font-family: "Magra", "Magra-Bold", sans-serif;
   font-style: normal;
   font-size: 32px;
   line-height: 39px;
@@ -84,7 +131,7 @@ a {
 
 .nav__link,
 .copyright {
-  font-family: "Red Hat Text", sans-serif;
+  font-family: "Red Hat Text", "RedHatText-Medium", sans-serif;
   font-style: normal;
   font-size: 16px;
   line-height: 21px;
@@ -99,7 +146,7 @@ a {
 .button__login {
   margin-left: 2%;
   padding: 10px 30px;
-  font-family: "Red Hat Text", sans-serif;
+  font-family: "Red Hat Text", "RedHatText-Medium", sans-serif;
   font-style: normal;
   font-size: 16px;
   line-height: 21px;
@@ -109,6 +156,205 @@ a {
   border: none;
   border-radius: 10px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), 0 2px 3px rgba(13, 96, 111, 0.16);
+}
+
+  /*появляющееся меню*/
+.active { /*overlay*/
+  display: block;
+  position: absolute;
+  z-index: 100;
+  left: 0; right: 0; top: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: right .8s;
+}
+
+ .login__pop-up {
+  position: absolute;
+  top: -800px; left: 0; right: 0;
+  transition: top 1s;
+  margin: 84px auto 0;
+  z-index: 110;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+/*   align-items: center; */
+  max-width: 650px;
+  width: 100%;
+  padding: 25px 45px;
+  background: linear-gradient(177.09deg, #FFFFFF 6.15%, #0D606F 202.69%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
+}
+
+.visible{ /*Login pop up/Sign up pop up*/
+  position: absolute;
+  top: 90px; left: 0; right: 0;
+  transition: top 1s;
+}
+
+.login__caption {
+  font-family: "Aleo", "Aleo-Bold", serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38px;
+  text-align: center;
+  color: #0D606F;
+  margin-bottom: 30px;
+}
+
+.Facebook {
+  box-shadow: 0px 0px 3px rgba(13, 96, 111, 0.08), 0px 2px 3px rgba(13, 96, 111, 0.16);
+  border-radius: 10px;
+  border: none;
+  font-family: "Red Hat Text", "RedHatText-Regular", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+  color: #FFFFFF;
+  padding: 15px 0 15px 39px;
+  background-image: url("./assets/svg/Facebook-Logo.svg");
+  background-position: 30.5%;
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-color: #1877F2;
+  margin-bottom: 20px;
+}
+
+.Google {
+  box-shadow: 0px 0px 3px rgba(13, 96, 111, 0.08), 0px 2px 3px rgba(13, 96, 111, 0.16);
+  border-radius: 10px;
+  border: none;
+  font-family: "Red Hat Text", "RedHatText-Regular", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+  color: #0D606F;
+  padding: 15px 0 15px 39px;
+  background-image: url("./assets/svg/Google-Logo.svg");
+  background-position: 32.5%;
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-color: #FFFFFF;
+  margin-bottom: 30px;
+}
+
+.login--span {
+  margin: 0 9px;
+  display: flex;
+  justify-content: space-between;
+  justify-content: center;
+  font-family: "Aleo", "Aleo-Bold", serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: rgba(13, 96, 111, 0.5);
+}
+
+.login--span::before {
+  content: "";
+  width: 100%;
+  max-width: 261px;
+  height: 1px;
+  background-color: #0D606F80;
+  position: absolute;
+  left: 45px;
+  top: 267px;
+}
+
+.login--span::after {
+  content: "";
+  width: 100%;
+  max-width: 261px;
+  height: 1px;
+  background-color: #0D606F80;
+  position: absolute;
+  right: 45px;
+  top: 267px;
+}
+
+.form__signin {
+  margin: 10px 0;
+}
+
+.form__email {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form__label {
+  font-family: "Aleo", "Aleo-Regular", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #0D606F;
+  margin-bottom: 5px;
+}
+
+.form__input {
+  box-sizing: border-box;
+  padding: 18px;
+  background: #FFFFFF;
+  box-shadow: inset 0px 0px 3px rgba(13, 96, 111, 0.08), inset 0px 2px 3px rgba(13, 96, 111, 0.16);
+  border-radius: 10px;
+  border: none;
+  outline: 0; /*убирает рамку плейсхолдера*/
+  font-family: "Aleo", "Aleo-Regular", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #0D606F;
+  width: 100%;
+}
+
+.form__button {
+  margin-top: 5px;
+  box-sizing: border-box;
+  padding: 14px;
+  color: #0D606F;
+  background: #0D606F;
+  box-shadow: inset 0px 0px 3px rgba(13, 96, 111, 0.08), inset 0px 2px 3px rgba(13, 96, 111, 0.16);
+  border-radius: 10px;
+  border: none;
+  outline: 0; /*убирает рамку плейсхолдера*/
+  font-family: "Red Hat Text", "RedHatText-Regular", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  font-size: 20px;
+  line-height: 26px;
+  color: #FFFFFF;
+  width: 100%;
+}
+
+.login__text {
+  font-family: "Aleo", "Aleo-Bold", serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  text-align: center;
+  line-height: 18px;
+  color: #0D606F80;;
+  text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.16);
+  padding-bottom: 26px;
+  border-bottom: 1px solid rgba(13, 96, 111, 0.5);
+}
+
+.login__text:last-of-type {
+  margin-top: 20px;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.login__text--highlight{
+  color: #0D606F;
+  text-decoration: underline;
 }
 
 .preview {
@@ -122,7 +368,7 @@ a {
 }
 
 .title {
-  font-family: "Aleo", serif;
+  font-family: "Aleo", "Aleo-Bold", serif;
   font-style: normal;
   font-size: 80px;
   line-height: 96px;
@@ -132,7 +378,7 @@ a {
 
 .subtitle {
   padding: 32px 0 46px;
-  font-family: "Aleo", serif;
+  font-family: "Aleo", "Aleo-BoldItalic", serif;
   font-style: italic;
   font-size: 20px;
   line-height: 24px;
@@ -159,7 +405,7 @@ a {
 
 .search-form__field {
   padding-left: 23px;
-  font-family: "Aleo", serif;
+  font-family: "Aleo", "Aleo-RegularItalic", serif;
   font-style: italic;
   font-size: 24px;
   line-height: 29px;
@@ -171,7 +417,7 @@ a {
 }
 
 .search-form__field::placeholder {
-  font-family: "Aleo", serif;
+  font-family: "Aleo", "Aleo-RegularItalic", serif;
   font-style: italic;
   font-size: 24px;
   line-height: 29px;
@@ -182,7 +428,7 @@ a {
 
 .search-form__submit {
   padding: 14px 33px;
-  font-family: "Red Hat Text", sans-serif;
+  font-family: "Red Hat Text", "RedHatText-Medium", sans-serif;
   font-style: normal;
   font-size: 24px;
   line-height: 32px;
@@ -201,7 +447,7 @@ a {
 
 .caption {
   margin-bottom: 40px;
-  font-family: "Red Hat Text", sans-serif;
+  font-family: "Red Hat Text", "RedHatText-Medium", sans-serif;
   font-style: normal;
   font-size: 40px;
   line-height: 53px;
@@ -237,7 +483,7 @@ a {
 }
 
 .desc {
-  font-family: "Aleo", serif;
+  font-family: "Aleo", "Aleo-Regular", serif;
   font-style: normal;
   font-size: 20px;
   line-height: 24px;
@@ -297,7 +543,8 @@ a {
   position: absolute;
   bottom: 40px;
   left: 15px;
-  font-family: "Red Hat Text", sans-serif;
+  z-index: 2;
+  font-family: "Red Hat Text", "RedHatText-Medium", sans-serif;
   font-style: normal;
   font-size: 32px;
   line-height: 42px;
@@ -355,7 +602,7 @@ a {
 .more {
   margin: 38px auto 0;
   padding: 14px 36px 14px 80px;
-  font-family: "Red Hat Text", sans-serif;
+  font-family: "Red Hat Text", "RedHatText-Medium", sans-serif;
   font-style: normal;
   font-size: 24px;
   line-height: 32px;
@@ -405,7 +652,7 @@ a {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  font-family: "Aleo", serif;
+  font-family: "Aleo", "Aleo-Regular", serif;
   font-style: normal;
   font-size: 35px;
   line-height: 42px;
@@ -419,7 +666,7 @@ a {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  font-family: "Aleo", serif;
+  font-family: "Aleo", "Aleo-Regular", serif;
   font-style: normal;
   font-size: 20px;
   line-height: 24px;
@@ -428,7 +675,7 @@ a {
 }
 
 .stories__link {
-  font-family: "Aleo", serif;
+  font-family: "Aleo", "Aleo-Bold", serif;
   font-style: normal;
   font-size: 20px;
   line-height: 24px;
@@ -469,6 +716,15 @@ a {
 @media (hover: hover) and (pointer: fine) { /*ховер эффекты*/
   .nav__link:hover { /*эффекты меню-бара*/
     color: #083942;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+
+  .Facebook:hover,
+  .Google:hover,
+  .form__button:hover,
+  .register:hover {
+    filter: drop-shadow(0 0 15px #083942);
     transition: 0.3s;
     cursor: pointer;
   }
@@ -569,7 +825,7 @@ a {
     background:
     url("./assets/img-mob/background-header-mobile.jpg") top no-repeat,
     url("./assets/img-mob/background-stories-mobile.jpg")bottom no-repeat;
-    background-size: 600px auto;
+    background-size: 550px auto;
     background-color: #FFFFFF;
   }
 
@@ -606,16 +862,6 @@ a {
     display: block;
   }
 
-  /*появляющееся меню*/
-  .active { /*overlay*/
-    display: block;
-    position: absolute;
-    z-index: 998;
-    left: 0; right: 0; top: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
-    transition: right .8s;
-  }
-
   .mobile-nav {
     display: flex;
     position: fixed;
@@ -649,7 +895,7 @@ a {
   }
 
   .mobile-nav__link {
-    font-family: "Red Hat Text", sans-serif;
+    font-family: "Red Hat Text", "Red Hat Text Medium", sans-serif;
     font-style: normal;
     font-size: 16px;
     line-height: 21px;
@@ -661,12 +907,25 @@ a {
     position: absolute;
     top: 8px;
     right: 127px;
-    z-index: 9999;
+    z-index: 110;
     padding: 15px;
     background-image: url("./assets/svg/clarity_window-close-line.svg");
     background-repeat: no-repeat;
     background-color: transparent;
     border: none;
+  }
+
+  .login__Facebook {
+    background-position: 20.5%;
+  }
+
+  .login__Google {
+    background-position: 22.5%;
+  }
+
+  .login--span::before,
+  .login--span::after {
+    max-width: 200px;
   }
 
   .nav__list,
@@ -810,6 +1069,7 @@ a {
 
   .slider__controls { /*кнопки-точки слайдера*/
     position: absolute;
+    z-index: 2;
     bottom: -10px;
     margin: 0 auto;
   }
@@ -920,6 +1180,20 @@ a {
   .nav {
     background-size: 35px;
     padding: 17px;
+  }
+
+  .login__Facebook {
+    background-position: 10.5%;
+  }
+
+  .login__Google {
+    background-position: 12.5%;
+  }
+
+  .login--span::before,
+  .login--span::after {
+    max-width: 120px;
+    top: 307px;
   }
 
   .header {
@@ -1043,6 +1317,7 @@ a {
 
   .slider__controls { /*кнопки-точки слайдера*/
     position: absolute;
+    z-index: 2;
     bottom: 10px;
     left: 177px;
     margin: 0 auto;

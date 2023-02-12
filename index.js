@@ -14,3 +14,13 @@ overlay.addEventListener('click', () => {
 });
 
 
+const login = document.querySelector('.button__login');
+const popUp = document.querySelector('.login__pop-up');
+
+login.addEventListener('click', () => {
+  popUp.classList.toggle("visible");
+});
+
+
+
+
