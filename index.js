@@ -12,11 +12,7 @@ overlayMob.addEventListener('click', () => {
   overlayMob.classList.remove("active");
 });
 
-/*
-+ Нажатие на кнопку Login (кнопка Account в мобильной версии) показывает сверстанный логин попап + 50
-+ логин попап соответствует верстке его закрытие происходит при клике вне попапа +25
-+ Нажатие на кнопку Register на Login попапе меняет разметку попапа на разметку Sign Up попапа согласно макету (То есть нажатие не закрывает модал а просто меняет его наполнение). +25
-+ логин попап имеет 2 инпута (email и пароль) при нажатии на кнопку Sign In показывается браузерный алерт с введенными данными (для реализации можно использовать тег ) +25*/
+
 
 /* ---------- Login pop up / Sign up pop up ---------- */
 const login = document.querySelector('.button__login');
@@ -72,6 +68,7 @@ register.addEventListener('click', (e) => {
 });
 
 
+
 /* ---------- при нажатии Sign In показывается браузерный алерт с введенными данными ---------- */
 const signIn = document.querySelector('.form__button');
 const formElement = document.getElementById('form'); // извлекаем элемент формы
@@ -86,8 +83,6 @@ signIn.addEventListener('click', () => {
   const password = formData.get('password');
   alert(`email: ${email}\npassword: ${password}`);
 });
-
-
 
 
 
