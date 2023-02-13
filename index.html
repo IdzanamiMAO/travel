@@ -37,7 +37,7 @@
           </nav>
           <button class="button__login">Login</button>
         </div>
-        <div class="mobile-menu">
+        <div class="mobile-menu__container">
           <nav class="mobile-nav">
             <ul class="mobile-nav__list">
               <li class="mobile-nav__item exit"></li>
@@ -62,26 +62,28 @@
             </ul>
           </nav>
         </div>
-        <div class="login__pop-up">
-          <h2 class="login__caption">Log in to your account</h2>
-          <div class="toggle">
-            <button class="login__button Facebook">Sign In with Facebook</button>
-            <button class="login__button Google">Sign In with Google</button>
-            <p class="login--span">or</p>
+        <div class="pop-up__container">
+          <div class="login__pop-up">
+            <h2 class="login__caption">Log in to your account</h2>
+            <div class="toggle">
+              <button class="login__button Facebook">Sign In with Facebook</button>
+              <button class="login__button Google">Sign In with Google</button>
+              <p class="login--span">or</p>
+            </div>
+            <form class="form__signin"action="" method="get">
+              <div class="form__email">
+                <label class="form__label" for="email">E-mail</label>
+                <input class="form__input" type="email" name="email" id="email" required>
+              </div>
+              <div class="form__email">
+                <label class="form__label" for="password">Password</label>
+                <input class="form__input" type="password" name="password" id="password" required>
+              </div>
+                <input class="form__button" type="submit" value="Sign In">
+            </form>
+            <p class="login__text login__text--highlight forgot">Forgot Your Password?</p>
+            <p class="login__text"><span class="an-account">Don&prime;t have an account? </span><span class="login__text--highlight register">Register</span></p>
           </div>
-          <form class="form__signin"action="" method="get">
-            <div class="form__email">
-              <label class="form__label" for="email">E-mail</label>
-              <input class="form__input" type="email" name="email" id="email" required>
-            </div>
-            <div class="form__email">
-              <label class="form__label" for="password">Password</label>
-              <input class="form__input" type="password" name="password" id="password" required>
-            </div>
-              <input class="form__button" type="submit" value="Sign In">
-          </form>
-          <p class="login__text login__text--highlight forgot">Forgot Your Password?</p>
-          <p class="login__text"><span class="account">Don&prime;t have an account? </span><span class="login__text--highlight register">Register</span></p>
         </div>
       </header>
       <main class="inner content-wrap">
