@@ -1,39 +1,55 @@
-/*const menuIcon = document.querySelector('.nav');
+const menuIcon = document.querySelector('.nav');
 const navbar = document.querySelector('.mobile-nav');
-const overlay = document.querySelector('.mobile-menu');
+const overlayMob = document.querySelector('.mobile-menu__container');
 
 menuIcon.addEventListener('click', () => {
   navbar.classList.add("change");
-  overlay.classList.add("active");
+  overlayMob.classList.add("active");
 });
 
-  overlay.addEventListener('click', () => {
+overlayMob.addEventListener('click', () => {
   navbar.classList.remove("change");
-  overlay.classList.remove("active");
-}); */
+  overlayMob.classList.remove("active");
+});
 
 /*
 + Нажатие на кнопку Login (кнопка Account в мобильной версии) показывает сверстанный логин попап + 50
-логин попап соответствует верстке его закрытие происходит при клике вне попапа +25
++ логин попап соответствует верстке его закрытие происходит при клике вне попапа +25
 логин попап имеет 2 инпута (email и пароль) при нажатии на кнопку Sign In показывается браузерный алерт с введенными данными (для реализации можно использовать тег ) +25
 + Нажатие на кнопку Register на Login попапе меняет разметку попапа на разметку Sign Up попапа согласно макету (То есть нажатие не закрывает модал а просто меняет его наполнение). +25 */
 
 /* ---------- Login pop up / Sign up pop up ---------- */
 const login = document.querySelector('.button__login');
+const account = document.querySelector('.account');
 const popUp = document.querySelector('.login__pop-up');
+const overlayPopup = document.querySelector('.pop-up__container');
 
 login.addEventListener('click', () => {
   popUp.classList.add("visible");
+  overlayPopup.classList.add("active");
+});
+
+account.addEventListener('click', () => {
+  popUp.classList.add("visible");
+  overlayPopup.classList.add("active");
+});
+
+overlayPopup.addEventListener('click', (e) => {
+  const targetVar = e.target;
+  if(!targetVar.classList.contains('register')) {
+    popUp.classList.remove("visible");
+    overlayPopup.classList.remove("active");
+  };
 });
 
 const register = document.querySelector('.register');
 
-register.addEventListener('click', (e) => {
+function reg(e) { /*функция перестраивает поп-ап входа на поп-ап создание аккаунта и обратно*/
   const changeCaption = document.querySelector('.login__caption');
   const toggleButton = document.querySelector('.toggle');
   const changeSignIn = document.querySelector('.form__button');
   const removeForgot = document.querySelector('.forgot');
-  const changeAccount = document.querySelector('.account');
+  const changeAccount = document.querySelector('.an-account');
   const changeRegister = document.querySelector('.register');
 
   if(e.target.textContent == "Register") { /* перестраивает поп-ап входа на поп-ап создание аккаунта*/
@@ -51,7 +67,13 @@ register.addEventListener('click', (e) => {
     changeAccount.innerHTML = "Don&prime;t have an account? ";
     changeRegister.innerHTML = "Register";
   }
+}
+
+register.addEventListener('click', (e) => {
+  reg(e);
 });
+
+
 
 
 
