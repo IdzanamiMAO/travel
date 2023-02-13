@@ -15,8 +15,8 @@ overlayMob.addEventListener('click', () => {
 /*
 + Нажатие на кнопку Login (кнопка Account в мобильной версии) показывает сверстанный логин попап + 50
 + логин попап соответствует верстке его закрытие происходит при клике вне попапа +25
-логин попап имеет 2 инпута (email и пароль) при нажатии на кнопку Sign In показывается браузерный алерт с введенными данными (для реализации можно использовать тег ) +25
-+ Нажатие на кнопку Register на Login попапе меняет разметку попапа на разметку Sign Up попапа согласно макету (То есть нажатие не закрывает модал а просто меняет его наполнение). +25 */
++ Нажатие на кнопку Register на Login попапе меняет разметку попапа на разметку Sign Up попапа согласно макету (То есть нажатие не закрывает модал а просто меняет его наполнение). +25
++ логин попап имеет 2 инпута (email и пароль) при нажатии на кнопку Sign In показывается браузерный алерт с введенными данными (для реализации можно использовать тег ) +25*/
 
 /* ---------- Login pop up / Sign up pop up ---------- */
 const login = document.querySelector('.button__login');
@@ -35,16 +35,14 @@ account.addEventListener('click', () => {
 });
 
 overlayPopup.addEventListener('click', (e) => {
-  const targetVar = e.target;
-  if(!targetVar.classList.contains('register')) {
+  if(e.target.classList.contains('pop-up__container')) {
     popUp.classList.remove("visible");
     overlayPopup.classList.remove("active");
   };
 });
 
 const register = document.querySelector('.register');
-
-function reg(e) { /*функция перестраивает поп-ап входа на поп-ап создание аккаунта и обратно*/
+function reg(e) { //функция перестраивает поп-ап входа на поп-ап создание аккаунта и обратно
   const changeCaption = document.querySelector('.login__caption');
   const toggleButton = document.querySelector('.toggle');
   const changeSignIn = document.querySelector('.form__button');
@@ -52,14 +50,14 @@ function reg(e) { /*функция перестраивает поп-ап вхо
   const changeAccount = document.querySelector('.an-account');
   const changeRegister = document.querySelector('.register');
 
-  if(e.target.textContent == "Register") { /* перестраивает поп-ап входа на поп-ап создание аккаунта*/
+  if(e.target.textContent == "Register") { // перестраивает поп-ап входа на поп-ап создание аккаунта*/
     changeCaption.innerHTML = "Create account";
     toggleButton.classList.add("remove");
     changeSignIn.value = "Sign Up";
     removeForgot.classList.add("remove");
     changeAccount.innerHTML = "Already have an account? ";
     changeRegister.innerHTML = "Log in";
-  } else { /* перестраивает поп-ап создания аккаунта на поп-ап входа*/
+  } else { // перестраивает поп-ап создания аккаунта на поп-ап входа
     changeCaption.innerHTML = "Log in to your account";
     toggleButton.classList.remove("remove");
     changeSignIn.value = "Sign In";
@@ -73,6 +71,21 @@ register.addEventListener('click', (e) => {
   reg(e);
 });
 
+
+/* ---------- при нажатии Sign In показывается браузерный алерт с введенными данными ---------- */
+const signIn = document.querySelector('.form__button');
+const formElement = document.getElementById('form'); // извлекаем элемент формы
+formElement.addEventListener('submit', (e) => { //отмена дефолтной перезагрузки браузера после нажатия на кнопку формы
+  e.preventDefault();
+});
+
+signIn.addEventListener('click', () => {
+  const formData = new FormData(formElement); // создаём объект FormData, передаём в него элемент формы
+  // теперь можно извлечь данные
+  const email = formData.get('email');
+  const password = formData.get('password');
+  alert(`email: ${email}\npassword: ${password}`);
+});
 
 
 
