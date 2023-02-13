@@ -1,8 +1,6 @@
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
-/*   line-height: 0;
-  -webkit-text-size-adjust: 0%; */
 }
 
 p,
@@ -141,7 +139,7 @@ a {
   color: #FFFFFF;
 }
 
-.mobile-menu {
+.mobile-menu__container {
   display: none;
 }
 
@@ -867,7 +865,7 @@ a {
     margin-right: 4px;
   }
 
-  .mobile-menu {
+  .mobile-menu__container{
     display: block;
   }
 
@@ -913,10 +911,6 @@ a {
     color: #FFFFFF;
   }
 
-  .account {
-    cursor: pointer;
-  }
-
   .exit {
     position: absolute;
     top: 8px;
@@ -929,17 +923,17 @@ a {
     border: none;
   }
 
-  .login__Facebook {
+  .Facebook {
     background-position: 20.5%;
   }
 
-  .login__Google {
+  .Google {
     background-position: 22.5%;
   }
 
   .login--span::before,
   .login--span::after {
-    max-width: 200px;
+    max-width: 150px;
   }
 
   .nav__list,
@@ -950,17 +944,17 @@ a {
   }
 
   .preview {
-    margin: 20px 15px 20px;
+    margin: 10px 15px 20px;
   }
 
   .title {
-    width: 75%;
+    width: 90%;
     font-size: 40px;
     line-height: 53px;
   }
 
   .search-form {
-    padding: 58px 0 61px;
+    padding: 20px 0 61px;
   }
 
   .search-form__info {
@@ -1041,6 +1035,8 @@ a {
 
   .slider__arrow{
     width: 30px;
+    position: absolute;
+    z-index: 2;
   }
 
   .left{
@@ -1049,6 +1045,7 @@ a {
     padding: 15px 0;
     background-size: 30px;
     background-repeat: no-repeat;
+    left: 0;
   }
 
   .right{
@@ -1057,6 +1054,7 @@ a {
     padding: 15px 0;
     background-size: 30px;
     background-repeat: no-repeat;
+    right: 0;
   }
 
   .slider__list { /*обертка для картинок*/
@@ -1196,11 +1194,11 @@ a {
     padding: 17px;
   }
 
-  .login__Facebook {
+  .Facebook {
     background-position: 10.5%;
   }
 
-  .login__Google {
+  .Google {
     background-position: 12.5%;
   }
 
