@@ -448,7 +448,7 @@ a {
 }
 
 .steps {
-  margin-bottom: 98px;
+  margin-bottom: 97px;
   padding: 0 9.1%;
 }
 
@@ -481,8 +481,8 @@ a {
 }
 
 .step__ico {
-  margin: 0 auto 30px;
-  padding: 25px;
+  margin: 0 auto 29px;
+  padding: 24px 25px;
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 16px;
@@ -512,7 +512,7 @@ a {
 
 .slider__wrapper { /*внешняя обертка для всего слайдера*/
   position: relative;
-  padding-top: 46px;
+  padding-top: 45px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -548,7 +548,7 @@ a {
 
 .country-name {
   position: absolute;
-  bottom: 40px;
+  bottom: 44px;
   left: 15px;
   z-index: 2;
   font-family: "Red Hat Text", "RedHatText-Medium", sans-serif;
@@ -561,7 +561,7 @@ a {
 }
 
 .slider__controls { /*кнопки слайдера*/
-  margin: 25px auto 0;
+  margin: 15px auto 0;
 }
 
 .button-inactive{
@@ -607,7 +607,7 @@ a {
 }*/
 
 .more {
-  margin: 38px auto 0;
+  margin: 40px auto 0;
   padding: 14px 36px 14px 80px;
   font-family: "Red Hat Text", "RedHatText-Medium", sans-serif;
   font-style: normal;
@@ -635,7 +635,7 @@ a {
 .stories__list {/*обертка для конкретной стори*/
   display: flex;
   justify-content: space-between;
-  padding-top: 30px;
+  padding-top: 26px;
 }
 
 .stories__list:first-of-type {
@@ -692,7 +692,7 @@ a {
 }
 
 .more--stories {
-  margin-top: 40px;
+  margin-top: 35px;
 }
 
 .footer {
@@ -710,7 +710,7 @@ a {
 
 .social__item {
   margin-left: 20px;
-  padding: 14px 0 13px;
+  padding: 13.5px 0 10px;
   max-width: 34px;
 }
 
@@ -1007,7 +1007,7 @@ a {
 
   .step__ico {
     margin-bottom: 18px;
-    padding: 17px;
+    padding: 16px 17px;
   }
 
   .step__ico svg {
@@ -1155,7 +1155,7 @@ a {
   }
 
   .social {
-    padding-left: 0;
+    padding-left: 7px;
   }
 
   .footer {
@@ -1217,14 +1217,14 @@ a {
   }
 
   .search-form {
-    padding: 38px 0 61px;
+    padding: 48px 0 61px;
   }
 
   .search-form__field,
   .search-form__field::placeholder {
     max-width: 170px;
     padding: 0;
-    padding-left: 7.5px;
+    padding-left: 4px;
     font-size: 14px;
     line-height: 17px;
   }
@@ -1247,7 +1247,7 @@ a {
   }
 
   .step__item:nth-of-type(2) {
-    padding-left: 41px;
+    padding-left: 44px;
     padding-right: 26px;
     margin-left: 0;
   }
@@ -1284,7 +1284,7 @@ a {
   }
 
   .slider__wrapper { /*внешняя обертка для всего слайдера*/
-    margin: 9px 0 5px;
+    margin: 11px 0 5px;
     padding: 0 15px;
     max-width: 100%;
   }
