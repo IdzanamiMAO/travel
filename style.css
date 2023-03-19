@@ -21,7 +21,7 @@ a {
   text-decoration: none;
 }
 
-.input{
+.input {
   padding: 0;
 }
 
@@ -186,7 +186,7 @@ a {
   border-radius: 16px;
 }
 
-.visible{ /*Login pop up/Sign up pop up*/
+.visible { /*Login pop up/Sign up pop up*/
   position: absolute;
   top: 90px; left: 0; right: 0;
   transition: top 0.8s;
@@ -359,7 +359,7 @@ a {
   border-top: 1px solid rgba(13, 96, 111, 0.5);
 }
 
-.login__text--highlight{
+.login__text--highlight {
   color: #0D606F;
   text-decoration: underline;
 }
@@ -448,7 +448,7 @@ a {
 }
 
 .steps {
-  margin-bottom: 98px;
+  margin-bottom: 97px;
   padding: 0 9.1%;
 }
 
@@ -481,8 +481,8 @@ a {
 }
 
 .step__ico {
-  margin: 0 auto 30px;
-  padding: 25px;
+  margin: 0 auto 29px;
+  padding: 24px 25px;
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 16px;
@@ -512,7 +512,7 @@ a {
 
 .slider__wrapper { /*внешняя обертка для всего слайдера*/
   position: relative;
-  padding-top: 46px;
+  padding-top: 45px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -527,7 +527,30 @@ a {
   /* overflow: hidden; */
 }
 
-.slider__arrow{
+/*анимация карусели*/
+@keyframes move-left {
+/*   from {left: -1400px;}
+  to {left: -540px;} */
+  from {left: -540px;}
+  to {left: 0;}
+}
+
+.transition-left {
+  animation-name: move-left;
+  animation-duration: 5s;
+}
+
+@keyframes move-right {
+  from {left: -540px;}
+  to {left: -1400px;}
+}
+
+.transition-right {
+  animation-name: move-right;
+  animation-duration: 5s;
+}
+
+.slider__arrow {
   display: none;
 }
 
@@ -548,7 +571,7 @@ a {
 
 .country-name {
   position: absolute;
-  bottom: 40px;
+  bottom: 44px;
   left: 15px;
   z-index: 2;
   font-family: "Red Hat Text", "RedHatText-Medium", sans-serif;
@@ -561,53 +584,31 @@ a {
 }
 
 .slider__controls { /*кнопки слайдера*/
-  margin: 25px auto 0;
+  margin: 15px auto 0;
 }
 
-.button-inactive{
+.button--inactive {
   padding: 10px;
-  background-color: rgba(242, 120, 92, 0.5);
+  margin: 0 3px;
+  background-color: #F2785C80;
   border: none;
   border-radius: 50px;
 }
 
-.button-inactive:nth-of-type(2){
-  margin: 0 5px;
-  padding: 10px;
+.--inactive {
+  background-color: #F2785C80;
+  fill: #F2785C80;
+}
+
+.--active {
   background-color: #F2785C;
-  border: none;
-  border-radius: 50px;
+  fill: #F2785C;
 }
 
-/*.button-active {
-  margin: 0 5px;
-  padding: 10px;
-  background-color: #F2785C;
-  border: none;
-  border-radius: 50px;
-}*/
 
-/*анимация карусели*/
-/*@keyframes move-left {
-  from {left: -540px;}
-  to {left: 0;}
-}
-.transition-left {
-  animation-name: move-left;
-  animation-duration: 5s;
-}
-
-@keyframes move-right {
-  from {left: -540px;}
-  to {left: -1080px;}
-}
-.transition-right {
-  animation-name: move-right;
-  animation-duration: 5s;
-}*/
 
 .more {
-  margin: 38px auto 0;
+  margin: 40px auto 0;
   padding: 14px 36px 14px 80px;
   font-family: "Red Hat Text", "RedHatText-Medium", sans-serif;
   font-style: normal;
@@ -635,7 +636,7 @@ a {
 .stories__list {/*обертка для конкретной стори*/
   display: flex;
   justify-content: space-between;
-  padding-top: 30px;
+  padding-top: 26px;
 }
 
 .stories__list:first-of-type {
@@ -692,7 +693,7 @@ a {
 }
 
 .more--stories {
-  margin-top: 40px;
+  margin-top: 35px;
 }
 
 .footer {
@@ -710,7 +711,7 @@ a {
 
 .social__item {
   margin-left: 20px;
-  padding: 14px 0 13px;
+  padding: 13.5px 0 10px;
   max-width: 34px;
 }
 
@@ -774,6 +775,22 @@ a {
 
 
 
+/* @media (max-width: 1024px) {
+  .slider__list {  /*обертка для картинок
+    left: -260px;
+  }
+
+  .slider__item { /*картинки с подписями
+    margin-left: 40px;
+  }
+
+  .country-img {
+    max-width: 500px;
+  }
+} */
+
+
+
 @media (max-width: 768px) {
   .logo {
     background-size: 20px;
@@ -807,13 +824,9 @@ a {
     margin-right: 1%;
   }
 
-  .country-img {
-    max-width: 500px;
-  }
-
-  .slider__list {
+/*   .slider__list { /*обертка для картинок
     left: -425px;
-  }
+  } */
 
   .stories__caption {
     margin-bottom: 0;
@@ -865,7 +878,7 @@ a {
     margin-right: 4px;
   }
 
-  .mobile-menu__container{
+  .mobile-menu__container {
     display: block;
   }
 
@@ -1007,7 +1020,7 @@ a {
 
   .step__ico {
     margin-bottom: 18px;
-    padding: 17px;
+    padding: 16px 17px;
   }
 
   .step__ico svg {
@@ -1025,48 +1038,40 @@ a {
     margin-bottom: 50px;
   }
 
-  .slider__wrapper { /*внешняя обертка для всего слайдера*/
+/*   .slider__wrapper { /*внешняя обертка для всего слайдера
     margin: 0 15px 25px;
     padding: 0;
     overflow: visible;
     flex-direction: row;
     align-items: center;
-  }
+  } */
 
-  .slider__arrow{
-    width: 30px;
+  .slider__arrow {
     position: absolute;
-    z-index: 2;
-  }
-
-  .left{
-    background-image: url("./assets/svg/ep_arrow-left.svg");
+    z-index: 20;
+    width: 30px;
     display: block;
     padding: 15px 0;
-    background-size: 30px;
-    background-repeat: no-repeat;
+  }
+
+  .left {
     left: 0;
   }
 
-  .right{
-    background-image: url("./assets/svg/ep_arrow-right.svg");
-    display: block;
-    padding: 15px 0;
-    background-size: 30px;
-    background-repeat: no-repeat;
+  .right {
     right: 0;
   }
 
-  .slider__list { /*обертка для картинок*/
+/*   .slider__list { /*обертка для картинок
     left: 0px;
     max-width: 450px;
     margin: 0 0 15px;
     overflow: hidden;
   }
 
-  .slider__item { /*картинки с подписями*/
+  .slider__item { /*картинки с подписями
     margin-left: 20px;
-  }
+  } */
 
   .country-img {
     max-width: 360px;
@@ -1081,24 +1086,15 @@ a {
 
   .slider__controls { /*кнопки-точки слайдера*/
     position: absolute;
-    z-index: 2;
+    z-index: 10;
     bottom: -10px;
     margin: 0 auto;
   }
 
-  .button-inactive,
-  .button-inactive:nth-of-type(2) {
+  .button--inactive {
     margin: 0;
     padding: 4px;
-    background-color: rgba(242, 120, 92, 0.5);
-    border: none;
-    border-radius: 50px;
-  }
-
-  .button-inactive:nth-of-type(1){
-    margin: 0 2px;
-    padding: 4px;
-    background-color: #F2785C;
+    background-color: #F2785C80;
     border: none;
     border-radius: 50px;
   }
@@ -1155,7 +1151,7 @@ a {
   }
 
   .social {
-    padding-left: 0;
+    padding-left: 7px;
   }
 
   .footer {
@@ -1217,14 +1213,14 @@ a {
   }
 
   .search-form {
-    padding: 38px 0 61px;
+    padding: 48px 0 61px;
   }
 
   .search-form__field,
   .search-form__field::placeholder {
     max-width: 170px;
     padding: 0;
-    padding-left: 7.5px;
+    padding-left: 4px;
     font-size: 14px;
     line-height: 17px;
   }
@@ -1247,7 +1243,7 @@ a {
   }
 
   .step__item:nth-of-type(2) {
-    padding-left: 41px;
+    padding-left: 44px;
     padding-right: 26px;
     margin-left: 0;
   }
@@ -1284,32 +1280,43 @@ a {
   }
 
   .slider__wrapper { /*внешняя обертка для всего слайдера*/
-    margin: 9px 0 5px;
+    margin: 11px 0 5px;
     padding: 0 15px;
     max-width: 100%;
   }
 
-  .slider__arrow{
-    display: block;
-    position: absolute;
-    z-index: 2;
-    background-size: 30px;
-    background-repeat: no-repeat;
-  }
-
-  .left{
-    background-image: url("./assets/svg/ep_arrow-left.svg");
+  .left {
     left: 20px;
   }
 
-  .right{
-    background-image: url("./assets/svg/ep_arrow-right.svg");
+  .right {
     right: 20px;
   }
 
   .slider__list { /*обертка для картинок*/
-    left: 0px;
+    left: -380px;
     margin: 0;
+  }
+
+  /*анимация карусели*/
+  @keyframes move-left {
+    from {left: -380px;}
+    to {left: 0;}
+  }
+
+  .transition-left {
+    animation-name: move-left;
+    animation-duration: 5s;
+  }
+
+  @keyframes move-right {
+    from {left: 0px;}
+    to {left: -380px;}
+  }
+
+  .transition-right {
+    animation-name: move-right;
+    animation-duration: 5s;
   }
 
   .slider__item { /*картинки с подписями*/
@@ -1329,27 +1336,10 @@ a {
 
   .slider__controls { /*кнопки-точки слайдера*/
     position: absolute;
-    z-index: 2;
+    z-index: 10;
     bottom: 15px;
     left: 177px;
     margin: 0 auto;
-  }
-
-  .button-inactive,
-  .button-inactive:nth-of-type(2) {
-    margin: 0;
-    padding: 4px;
-    background-color: rgba(242, 120, 92, 0.5);
-    border: none;
-    border-radius: 50px;
-  }
-
-  .button-inactive:nth-of-type(1){
-    margin: 0 2px;
-    padding: 4px;
-    background-color: #F2785C;
-    border: none;
-    border-radius: 50px;
   }
 
   .country-img {

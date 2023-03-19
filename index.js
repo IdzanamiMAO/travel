@@ -3,8 +3,10 @@ const navbar = document.querySelector('.mobile-nav');
 const overlayMob = document.querySelector('.mobile-menu__container');
 
 menuIcon.addEventListener('click', () => {
-  navbar.classList.add("change");
-  overlayMob.classList.add("active");
+  if(window.innerWidth <= 550) {
+    navbar.classList.add("change");
+    overlayMob.classList.add("active");
+  };
 });
 
 overlayMob.addEventListener('click', () => {
@@ -12,11 +14,7 @@ overlayMob.addEventListener('click', () => {
   overlayMob.classList.remove("active");
 });
 
-/*
-+ Нажатие на кнопку Login (кнопка Account в мобильной версии) показывает сверстанный логин попап + 50
-+ логин попап соответствует верстке его закрытие происходит при клике вне попапа +25
-+ Нажатие на кнопку Register на Login попапе меняет разметку попапа на разметку Sign Up попапа согласно макету (То есть нажатие не закрывает модал а просто меняет его наполнение). +25
-+ логин попап имеет 2 инпута (email и пароль) при нажатии на кнопку Sign In показывается браузерный алерт с введенными данными (для реализации можно использовать тег ) +25*/
+
 
 /* ---------- Login pop up / Sign up pop up ---------- */
 const login = document.querySelector('.button__login');
@@ -72,6 +70,7 @@ register.addEventListener('click', (e) => {
 });
 
 
+
 /* ---------- при нажатии Sign In показывается браузерный алерт с введенными данными ---------- */
 const signIn = document.querySelector('.form__button');
 const formElement = document.getElementById('form'); // извлекаем элемент формы
@@ -89,8 +88,6 @@ signIn.addEventListener('click', () => {
 
 
 
-
-
 /*
 Слайдер изображений в секции destinations +50
 на десктоп варианте при клике на урезанную картинку слева или справа изображение меняется по принципу карусели (например если нажать правую картинку та что была в центре уезжает налево, а та что была видна наполовину оказывается справа). Слайдер может быть как конечным так и бесконечным - данный критерий не должен влиять на оценку + 20
@@ -98,3 +95,135 @@ signIn.addEventListener('click', () => {
 Анимации плавного перемещения для слайдера +10*/
 
 /* ---------- Слайдер изображений в секции destinations ---------- */
+
+/* const slider = document.querySelector('.slider__list'); // сам слайдер, обертка для картинок
+let sliderItems = [...document.querySelectorAll('.slider__item')]; //собирает в массив карточки (мутирует из-за фунуции right)
+
+function right() { //функция создает слайд в конце (копируется все, кроме id)
+  const newItem = document.createElement("div");
+  newItem.className = 'slider__item';
+  newItem.innerHTML = sliderItems[0].innerHTML; //добавляет сожержимое первого элемента созданному элементу
+  slider.appendChild(newItem); //добавляет его в пул слайдера
+  console.log('sliderItems function right()', sliderItems); //3 элемента
+};
+
+function left() { //функция создает слайд в начале (копируется все, кроме id) из-за пуша в начало массива косо работает анимация
+  const newItem = document.createElement("div");
+  newItem.className = 'slider__item';
+  newItem.innerHTML = sliderItems[2].innerHTML; //добавляет сожержимое последнего элемента созданному элементу
+  slider.insertBefore(newItem, slider.firstChild); //добавляет его в пул слайдера
+  console.log('sliderItems function left()', sliderItems); //3 элемента
+};
+
+const moveRight = () => {
+  slider.classList.add('transition-right');
+  previous.removeEventListener('click', moveLeft); // отключение стрелок на время анимации (можно еще цвет делать неактивный)
+  next.removeEventListener('click', moveRight); // отключение стрелок на время анимации (можно еще цвет делать неактивный)
+  right();
+};
+
+const moveLeft = () => {
+  slider.classList.add('transition-left');
+  previous.removeEventListener('click', moveLeft); // отключение стрелок на время анимации (можно еще цвет делать неактивный)
+  next.removeEventListener('click', moveRight); // отключение стрелок на время анимации (можно еще цвет делать неактивный)
+  left()
+};
+
+const next = document.querySelector('#item-next');
+const previous = document.querySelector('#item-previous');
+
+next.addEventListener('click', () => {
+  moveRight();
+});
+
+previous.addEventListener('click', () => {
+  moveLeft();
+});
+
+
+slider.addEventListener('animationend', (animationEven) => {
+  //let changedItem;
+  if (animationEven.animationName === 'move-right') {
+    slider.classList.remove('transition-right');
+
+    console.log('sliderItems slider.addEventListener', sliderItems);
+
+
+
+
+    //changedItem = next;
+    //slider.classList.remove('transition-left');
+    //document.querySelector('#item-current').innerHTML = next.innerHTML;
+
+  } else {
+    slider.classList.remove('transition-left');
+
+    // в созданный в left() элемент
+
+    //changedItem = previous
+    //document.querySelector('#item-current').innerHTML = previous.innerHTML;
+  }
+
+  //const sliderItem1 = createItemTemplate(); // сомнительно. по идее здесь надо генерировать новый элемент (с новой картинкой и названием страны), но я хочу просто откуда-то копировать.
+  //sliderItem1.innerHTML = document.querySelector('#item-next').innerHTML; // копирую из item-next в созданный элемент, будет работать только для левой анимации, т.к. для правой надо копировать из item-previous
+
+  //changedItem.innerHTML = ''; // обнуляю то, что записано в переменную
+  //changedItem.appendChild(sliderItem1); // помещаю вот то, что генерировала раньше в переменную
+
+  previous.addEventListener('click', moveLeft);
+  next.addEventListener('click', moveRight);
+}); */
+
+
+/*const btnLeft = document.querySelector('.left');
+const btnRight = document.querySelector('.right');
+const slider = document.querySelector('.slider__list');
+
+const moveLeft = () => {
+  slider.classList.add('transition-left');
+  btnLeft.removeEventListener('click', moveLeft); // отключение стрелок на время анимации (можно еще цвет делать неактивный)
+  btnRight.removeEventListener('click', moveRight); // отключение стрелок на время анимации (можно еще цвет делать неактивный)
+};
+
+const moveRight = () => {
+  slider.classList.add('transition-right');
+  btnLeft.removeEventListener('click', moveLeft);
+  btnRight.removeEventListener('click', moveRight);
+};
+
+btnLeft.addEventListener('click', moveLeft);
+btnRight.addEventListener('click', moveRight);
+
+
+const ITEM_LEFT = document.querySelector('#item-left');
+const ITEM_RIGHT = document.querySelector('#item-right');
+
+const createItemTemplate = () => { // сомнительно. по идее здесь надо генерировать новый элемент (с новой картинкой и названием страны), но я хочу просто откуда-то копировать.
+  const sliderItem = document.createElement("div");
+  sliderItem.classList.add('slider__item');
+  return sliderItem;
+}
+
+
+slider.addEventListener('animationend', (animationEven) => {
+  let changedItem;
+  if (animationEven.animationName === 'move-left') {
+    slider.classList.remove('transition-left');
+    changedItem = ITEM_LEFT
+    document.querySelector('#item-active').innerHTML = ITEM_LEFT.innerHTML;
+  } else {
+    slider.classList.remove('transition-right');
+    changedItem = ITEM_RIGHT;
+    slider.classList.remove('transition-left');
+    document.querySelector('#item-active').innerHTML = ITEM_RIGHT.innerHTML;
+  }
+
+  const sliderItem1 = createItemTemplate();
+  sliderItem1.innerHTML = document.querySelector('#item-right').innerHTML; // копирую из item-right в созданный элемент, будет работать только для левой анимации, т.к. для правой надо копировать из item-left
+
+  changedItem.innerHTML = ''; // обнуляю то, что записано в переменную
+  changedItem.appendChild(sliderItem1); // помещаю вот то, что генерировала раньше в переменную
+
+  btnLeft.addEventListener('click', moveLeft);
+  btnRight.addEventListener('click', moveRight);
+}) */
