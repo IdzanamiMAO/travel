@@ -130,43 +130,51 @@
         </section>
         <section class="destinations" id="destinations">
           <h2 class="caption caption--destinations">Popular destinations</h2>
-          <div class="slider__wrapper">
-            <div class="slider__arrow left">
-            </div>
-            <div class="slider__list transition-left">
-              <div class="slider__item">
-                <picture>
-                  <source srcset="./assets/img-mob/slider-mobile.jpg" media="(max-width: 399px)">
-                  <source srcset="./assets/img/Spain.jpg" media="(min-width: 400px)">
-                  <img class="country-img" src="./assets/img-mob/slider-mobile.jpg" alt="Spain">
-                </picture>
-                <p class="country-name">Spain</p>
-              </div>
-              <div class="slider__item">
-                <picture>
-                  <source srcset="./assets/img-mob/slider-mobile.jpg" media="(max-width: 399px)">
-                  <source srcset="./assets/img/Japan.jpg" media="(min-width: 400px)">
-                  <img class="country-img" src="./assets/img-mob/slider-mobile.jpg" alt="Japan">
-                </picture>
-                <p class="country-name">Japan</p>
-              </div>
-              <div class="slider__item">
-                <picture>
-                  <source srcset="./assets/img-mob/slider-mobile.jpg" media="(max-width: 399px)">
-                  <source srcset="./assets/img/USA.jpg" media="(min-width: 400px)">
-                  <img class="country-img" src="./assets/img-mob/slider-mobile.jpg" alt="USA">
-                </picture>
-                <p class="country-name">USA</p>
-              </div>
-            </div>
+          <div class="slider__wrapper"> <!-- внешняя обертка для всего слайдера -->
+            <div class="slider__arrow left"> <!-- кнопка влево на мобильной версии -->
+              <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="btn_svg --inactive" d="M20.0757 26.9325C20.4272 26.5809 20.6246 26.1041 20.6246 25.6069C20.6246 25.1097 20.4272 24.6329 20.0757 24.2813L10.7944 15L20.0757 5.71875C20.4172 5.36512 20.6062 4.89149 20.6019 4.39987C20.5976 3.90825 20.4005 3.43798 20.0528 3.09034C19.7052 2.7427 19.2349 2.54551 18.7433 2.54124C18.2517 2.53696 17.778 2.72595 17.4244 3.0675L6.81753 13.6744C6.46602 14.026 6.26855 14.5028 6.26855 15C6.26855 15.4972 6.46602 15.974 6.81753 16.3256L17.4244 26.9325C17.776 27.284 18.2528 27.4815 18.75 27.4815C19.2472 27.4815 19.724 27.284 20.0757 26.9325Z"/>
+                </svg>
+            </div> <!-- кнопка влево на мобильной версии -->
+<!--             <div class="slider"> --> <!-- обертка для слайдера -->
+              <div class="slider__list"> <!-- сам слайдер, обертка для картинок -->
+                <div class="slider__item" id="item-previous"> <!-- карточка-картинка с подписями -->
+                  <picture>
+                    <source srcset="./assets/img-mob/slider-mobile.jpg" media="(max-width: 399px)">
+                    <source srcset="./assets/img/Spain.jpg" media="(min-width: 400px)">
+                    <img class="country-img" src="./assets/img-mob/slider-mobile.jpg" alt="Spain">
+                  </picture>
+                  <p class="country-name">Spain</p>
+                </div> <!-- карточка-картинка с подписями -->
+                <div class="slider__item" id="item-current"> <!-- карточка-картинка с подписями -->
+                  <picture>
+                    <source srcset="./assets/img-mob/slider-mobile.jpg" media="(max-width: 399px)">
+                    <source srcset="./assets/img/Japan.jpg" media="(min-width: 400px)">
+                    <img class="country-img" src="./assets/img-mob/slider-mobile.jpg" alt="Japan">
+                  </picture>
+                  <p class="country-name">Japan</p>
+                </div> <!-- карточка-картинка с подписями -->
+                <div class="slider__item" id="item-next"> <!-- карточка-картинка с подписями -->
+                  <picture>
+                    <source srcset="./assets/img-mob/slider-mobile.jpg" media="(max-width: 399px)">
+                    <source srcset="./assets/img/USA.jpg" media="(min-width: 400px)">
+                    <img class="country-img" src="./assets/img-mob/slider-mobile.jpg" alt="USA">
+                  </picture>
+                  <p class="country-name">USA</p>
+                </div> <!-- карточка-картинка с подписями -->
+              </div> <!-- сам слайдер, обертка для картинок -->
+<!--             </div> --> <!-- обертка для слайдера -->
             <div class="slider__arrow right">
+              <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="btn_svg --active"d="M9.92435 3.0675C9.57284 3.41911 9.37537 3.89594 9.37537 4.39312C9.37537 4.89031 9.57284 5.36713 9.92435 5.71875L19.2056 15L9.92435 24.2812C9.5828 24.6349 9.39381 25.1085 9.39808 25.6001C9.40235 26.0917 9.59955 26.562 9.94719 26.9097C10.2948 27.2573 10.7651 27.4545 11.2567 27.4588C11.7483 27.463 12.222 27.274 12.5756 26.9325L23.1825 16.3256C23.534 15.974 23.7314 15.4972 23.7314 15C23.7314 14.5028 23.534 14.026 23.1825 13.6744L12.5756 3.0675C12.224 2.71599 11.7472 2.51852 11.25 2.51852C10.7528 2.51852 10.276 2.71599 9.92435 3.0675Z"/>
+                </svg>
+            </div> <!-- кнопка вправо на мобильной версии -->
+            <div class="slider__controls"> <!-- кнопки-индикаторы слайда -->
+              <button class="button--inactive"></button>
+              <button class="button--inactive --active"></button>
+              <button class="button--inactive"></button>
             </div>
-            <div class="slider__controls">
-              <button class="button-inactive"></button>
-              <button class="button-inactive"></button>
-              <button class="button-inactive"></button>
-            </div>
-          </div>
+          </div> <!-- внешняя обертка для всего слайдера -->
           <button class="more">Find More</button>
         </section>
         <section class="stories" id="stories">
@@ -180,7 +188,7 @@
               </picture>
               <div class="stories__item">
                 <h3 class="stories__caption">10 Photos of Attractive Thailand</h3>
-                <p class="stories__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                <p class="stories__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                 <div class="stories__desc"><a class="stories__link" href="#/">Read More</a></div>
               </div>
             </div>
@@ -192,7 +200,7 @@
               </picture>
               <div class="stories__item">
                 <h3 class="stories__caption">Canyonlands National Park, Utah</h3>
-                <p class="stories__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                <p class="stories__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                 <div class="stories__desc"><a class="stories__link" href="#/">Read More</a></div>
               </div>
             </div>
@@ -204,7 +212,7 @@
               </picture>
               <div class="stories__item">
                 <h3 class="stories__caption">I left my heart in the Mountains!</h3>
-                <p class="stories__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                <p class="stories__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                 <div class="stories__desc"><a class="stories__link" href="#/">Read More</a></div>
               </div>
             </div>
@@ -216,7 +224,7 @@
               </picture>
               <div class="stories__item">
                 <h3 class="stories__caption">The Longest journey in my life!</h3>
-                <p class="stories__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                <p class="stories__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                 <div class="stories__desc"><a class="stories__link" href="#/">Read More</a></div>
               </div>
             </div>
